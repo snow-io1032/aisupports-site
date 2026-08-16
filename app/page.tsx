@@ -976,10 +976,11 @@ export default function HomePage() {
           <div className="footer-copy">© 2026 AISupports（mlma）. All rights reserved.</div>
         </div>
         <div className="footer-links">
-          <a href="/company">会社概要</a>
+<a href="/company">会社概要</a>
           <a href="/privacy">プライバシーポリシー</a>
           <a href="/terms">利用規約</a>
-        </div>
+          <a href="/tokushoho">特定商取引法に基づく表記</a>
+                  </div>
       </footer>
     </main>
   );

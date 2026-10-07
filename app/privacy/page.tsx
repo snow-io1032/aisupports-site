@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "プライバシーポリシー | AISupports",
   description: "AISupportsのプライバシーポリシー。お客様の個人情報の取り扱いについて説明しています。",
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 const sections = [

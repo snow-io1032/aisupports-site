@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState, useCallback, FormEvent } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, useCallback, FormEvent } from "react";
 import { homeFaqs } from "./data/faqs";
 
 /* ══════════════════════════════════════════════════════════════
@@ -77,27 +77,43 @@ function useTilt(strength = 7) {
    Counter
    ══════════════════════════════════════════════════════════════ */
 function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
-  const [val, setVal] = useState(0);
-  const elRef   = useRef<HTMLSpanElement>(null);
-  const started = useRef(false);
-  useEffect(() => {
+  // 静的HTML（クローラー・JS無効環境）には最終値がそのまま出力される。
+  // アニメーションは表示中の文字を直接書き換えて行う（Reactの再描画を起こさない）。
+  const elRef = useRef<HTMLSpanElement>(null);
+
+  // 画面に描画される前に判定する：
+  // ・すでに画面内に見えている → 最終値のまま（0に戻すとチラつくため）
+  // ・「視差効果を減らす」設定の人 → アニメーションしない
+  // ・画面外 → 0にして待機し、スクロールで見えたらカウントアップ
+  useLayoutEffect(() => {
     const el = elRef.current; if (!el) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const r = el.getBoundingClientRect();
+    const inView = r.top < window.innerHeight && r.bottom > 0;
+    if (reduce || inView) return;
+
+    el.textContent = `0${suffix}`;
+    let raf = 0;
     const obs = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !started.current) {
-        started.current = true;
-        const t0 = performance.now(); const dur = 1800;
-        const tick = (now: number) => {
-          const p = Math.min((now - t0) / dur, 1);
-          setVal(Math.round((1 - Math.pow(1 - p, 3)) * to));
-          if (p < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-      }
+      if (!entry.isIntersecting) return;
+      obs.disconnect();
+      const t0 = performance.now(); const dur = 1800;
+      const tick = (now: number) => {
+        const p = Math.min((now - t0) / dur, 1);
+        el.textContent = `${Math.round((1 - Math.pow(1 - p, 3)) * to)}${suffix}`;
+        if (p < 1) raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
     }, { threshold: 0.4 });
     obs.observe(el);
-    return () => obs.disconnect();
-  }, [to]);
-  return <span ref={elRef}>{val}{suffix}</span>;
+    return () => {
+      obs.disconnect();
+      cancelAnimationFrame(raf);
+      el.textContent = `${to}${suffix}`;
+    };
+  }, [to, suffix]);
+
+  return <span ref={elRef}>{`${to}${suffix}`}</span>;
 }
 
 /* ══════════════════════════════════════════════════════════════

@@ -641,3 +641,66 @@ section[id], #top { scroll-margin-top: 80px; }
   .stats-inner { grid-template-columns: 1fr 1fr; gap: 0; }
   .consulting-tagline { padding: 24px 20px; }
 }
+
+/* ════════════════════════════════════════════════════════════
+   Case Studies（導入事例ページ）— cs- で始まるクラスのみ。既存ページには影響しない
+   ════════════════════════════════════════════════════════════ */
+.cs-page { min-height: 100vh; background: var(--bg); }
+.cs-container { max-width: 800px; margin: 0 auto; padding: 32px 24px 96px; }
+
+.cs-breadcrumb ol { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0 0 32px; padding: 0; font-size: 0.82rem; color: var(--text-3); }
+.cs-breadcrumb li + li::before { content: "›"; margin-right: 6px; color: var(--text-3); }
+.cs-breadcrumb a { color: var(--blue-dark); }
+.cs-breadcrumb a:hover { text-decoration: underline; }
+
+.cs-header { margin-bottom: 48px; }
+.cs-label { display: inline-block; background: var(--blue-light); color: var(--blue); padding: 6px 16px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; }
+.cs-title { margin: 16px 0 20px; font-size: clamp(1.45rem, 3.6vw, 2.1rem); font-weight: 800; line-height: 1.45; letter-spacing: -0.02em; color: var(--text); }
+.cs-summary { margin: 0; padding: 20px 24px; background: var(--bg-card); border-left: 4px solid var(--blue); border-radius: 12px; box-shadow: var(--s-sm); color: var(--text-2); line-height: 1.95; }
+.cs-date { margin: 14px 0 0; font-size: 0.8rem; color: var(--text-3); }
+
+.cs-section { margin-bottom: 44px; }
+.cs-section h2 { margin: 0 0 16px; padding-bottom: 10px; border-bottom: 2px solid var(--border); font-size: 1.3rem; font-weight: 800; color: var(--text); }
+.cs-section p { margin: 0 0 12px; color: var(--text-2); line-height: 1.95; }
+
+.cs-table { width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: 12px; overflow: hidden; box-shadow: var(--s-sm); font-size: 0.95rem; }
+.cs-table th, .cs-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border); color: var(--text-2); vertical-align: top; }
+.cs-table tr:last-child th, .cs-table tr:last-child td { border-bottom: none; }
+.cs-table thead th { background: var(--bg-alt); color: var(--text); font-size: 0.85rem; }
+.cs-table tbody th { color: var(--text); font-weight: 700; }
+.cs-table-overview tbody th { width: 140px; background: var(--bg-alt); }
+.cs-after { color: var(--blue-dark) !important; font-weight: 800; }
+.cs-table-results td { white-space: nowrap; }
+
+.cs-steps { margin: 0; padding-left: 1.4em; color: var(--text-2); line-height: 1.95; }
+.cs-steps li { margin-bottom: 8px; padding-left: 4px; }
+
+.cs-tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0 0 16px; padding: 0; }
+.cs-tags li { padding: 6px 12px; border-radius: 999px; background: var(--blue-light); border: 1px solid rgba(59,158,232,0.2); color: var(--blue-dark); font-size: 0.82rem; font-weight: 700; }
+
+.cs-cta { margin: 56px 0 32px; padding: 32px 24px; text-align: center; background: var(--bg-card); border-radius: 16px; box-shadow: var(--s-card); }
+.cs-cta-text { margin: 0 0 20px; color: var(--text-2); line-height: 1.9; }
+
+.cs-more { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: center; font-size: 0.9rem; }
+.cs-more a { color: var(--blue-dark); text-decoration: underline; text-underline-offset: 3px; }
+
+.cs-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
+.cs-list-item { padding: 28px 24px; background: var(--bg-card); border-radius: 16px; box-shadow: var(--s-card); }
+.cs-list-industry { font-size: 0.78rem; font-weight: 700; color: var(--blue-dark); }
+.cs-list-title { margin: 8px 0 12px; font-size: 1.15rem; font-weight: 800; line-height: 1.55; color: var(--text); }
+.cs-list-title a:hover { color: var(--blue-dark); }
+.cs-list-desc { margin: 0 0 16px; color: var(--text-2); font-size: 0.92rem; line-height: 1.85; }
+.cs-list-link { color: var(--blue-dark); font-weight: 700; font-size: 0.9rem; }
+
+@media (max-width: 600px) {
+  .cs-container { padding: 24px 16px 72px; }
+  .cs-summary { padding: 16px 18px; }
+  .cs-table { font-size: 0.88rem; }
+  .cs-table th, .cs-table td { padding: 12px 12px; }
+  .cs-table-overview tbody th { width: 96px; }
+  .cs-cta .btn { width: 100%; height: auto; min-height: 52px; padding: 12px 16px; line-height: 1.5; white-space: normal; }
+}
+
+/* トップの実績カードから導入事例ページへのリンク */
+.result-case-link { display: inline-block; margin-top: 16px; color: var(--blue-dark); font-size: 0.87rem; font-weight: 700; }
+.result-case-link:hover { text-decoration: underline; text-underline-offset: 3px; }

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useLayoutEffect, useRef, useState, useCallback, FormEvent } from "react";
 import { homeFaqs } from "./data/faqs";
 
@@ -627,6 +628,8 @@ export default function HomePage() {
       impact: "5施策", impactLabel: "店舗DX同時実装",
       desc: "ロボティクスによる棚割り自動化、配送ルート最適化、AIエージェントによる欠品全自動処理、HACCP異常検知通知など複数DX施策を同時展開。",
       tools: ["AIエージェント", "経路最適化", "HACCP自動化"],
+      caseHref: "/case-studies/haccp-food-retail",
+      caseLabel: "HACCP記録DXの導入事例を読む →",
     },
     {
       company: "ホンダ系列企業", tag: "製造・自動車",
@@ -783,6 +786,9 @@ export default function HomePage() {
               <div className="result-tools">
                 {r.tools.map(t => <span className="tool-badge" key={t}>{t}</span>)}
               </div>
+              {r.caseHref && (
+                <Link className="result-case-link" href={r.caseHref}>{r.caseLabel}</Link>
+              )}
             </TiltCard>
           ))}
         </div>

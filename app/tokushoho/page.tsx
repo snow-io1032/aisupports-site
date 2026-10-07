@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "特定商取引法に基づく表記 | AISupports",
   description:
     "AISupports（mlma）の特定商取引法に基づく表記。販売事業者情報、販売価格、支払方法、役務の提供時期、解約・返金に関する条件を記載しています。",
+  alternates: {
+    canonical: "/tokushoho",
+  },
 };
 
 /* ============================================================

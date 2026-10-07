@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "利用規約 | AISupports",
   description: "AISupportsの利用規約。サービスご利用にあたっての条件を定めています。",
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 const terms = [

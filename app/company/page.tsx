@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "会社概要 | AISupports",
   description: "AISupports（mlma）の会社概要・登記情報・所在地・代表者情報。北海道を拠点にAI・DX支援を提供しています。",
+  alternates: {
+    canonical: "/company",
+  },
 };
 
 const rows = [

@@ -670,7 +670,7 @@ section[id], #top { scroll-margin-top: 80px; }
 .cs-table tbody th { color: var(--text); font-weight: 700; }
 .cs-table-overview tbody th { width: 140px; background: var(--bg-alt); }
 .cs-after { color: var(--blue-dark) !important; font-weight: 800; }
-.cs-table-results td { white-space: nowrap; }
+.cs-nowrap { white-space: nowrap; }
 
 .cs-steps { margin: 0; padding-left: 1.4em; color: var(--text-2); line-height: 1.95; }
 .cs-steps li { margin-bottom: 8px; padding-left: 4px; }
@@ -698,6 +698,15 @@ section[id], #top { scroll-margin-top: 80px; }
   .cs-table { font-size: 0.88rem; }
   .cs-table th, .cs-table td { padding: 12px 12px; }
   .cs-table-overview tbody th { width: 96px; }
+  /* 結果表：スマホでは1行ずつ縦に積む（列が狭くなりすぎるのを防ぐ） */
+  .cs-table-results thead { display: none; }
+  .cs-table-results, .cs-table-results tbody, .cs-table-results tr, .cs-table-results th, .cs-table-results td { display: block; width: 100%; }
+  .cs-table-results tr { border-bottom: 1px solid var(--border); padding: 4px 0; }
+  .cs-table-results tr:last-child { border-bottom: none; }
+  .cs-table-results th, .cs-table-results td { border-bottom: none; padding: 6px 14px; }
+  .cs-table-results th { padding-top: 12px; }
+  .cs-table-results td::before { content: attr(data-label); display: inline-block; min-width: 4.5em; margin-right: 8px; font-size: 0.78rem; font-weight: 700; color: var(--text-3); }
+  .cs-table-results td:last-child { padding-bottom: 12px; }
   .cs-cta .btn { width: 100%; height: auto; min-height: 52px; padding: 12px 16px; line-height: 1.5; white-space: normal; }
 }
 

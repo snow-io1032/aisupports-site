@@ -620,8 +620,10 @@ export default function HomePage() {
     {
       company: "建設会社", tag: "建設業",
       impact: "1名分", impactLabel: "事務コスト削減",
-      desc: "Dify × LINE APIによる自動見積もりシステムを設計・実装。見積もり業務を全自動化し、事務スタッフ1名分相当の工数削減を実現。",
+      desc: "Dify × LINE APIで、問い合わせに概算見積もりを自動返信する仕組みを構築。社長の見積もり作成を不要にし、事務スタッフ1名分相当の工数削減を実現。",
       tools: ["Dify", "LINE API", "業務自動化"],
+      caseHref: "/case-studies/line-estimate-construction",
+      caseLabel: "LINE自動見積もりの導入事例を読む →",
     },
     {
       company: "大型業務スーパー", tag: "小売・流通",

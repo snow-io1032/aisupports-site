@@ -13,6 +13,9 @@ export function generateStaticParams() {
 
 type Props = { params: Promise<{ slug: string }> };
 
+// 「約10時間/月」のような短い値は途中で折り返さない（長い文章は通常どおり折り返す）
+const nowrap = (v: string) => (v.length <= 12 ? "cs-nowrap" : "");
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const cs = getCaseStudy(slug);
@@ -120,8 +123,8 @@ export default async function CaseStudyPage({ params }: Props) {
               {cs.results.map((r) => (
                 <tr key={r.label}>
                   <th scope="row">{r.label}</th>
-                  <td>{r.before}</td>
-                  <td className="cs-after">{r.after}</td>
+                  <td data-label="導入前" className={nowrap(r.before)}>{r.before}</td>
+                  <td data-label="導入後" className={`cs-after ${nowrap(r.after)}`}>{r.after}</td>
                 </tr>
               ))}
             </tbody>

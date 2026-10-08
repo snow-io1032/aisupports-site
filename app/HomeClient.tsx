@@ -628,19 +628,19 @@ export default function HomePage() {
     {
       company: "大型業務スーパー", tag: "小売・流通",
       impact: "5施策", impactLabel: "店舗DX同時実装",
-      desc: "ロボティクスによる棚割り自動化、配送ルート最適化、AIエージェントによる欠品全自動処理、HACCP異常検知通知など複数DX施策を同時展開。",
+      desc: "ロボティクスによる棚割り自動化、配送ルート最適化、AIエージェントによる欠品処理の自動化、HACCP異常検知通知など複数DX施策を同時展開。",
       tools: ["AIエージェント", "経路最適化", "HACCP自動化"],
       caseHref: "/case-studies/haccp-food-retail",
       caseLabel: "HACCP記録DXの導入事例を読む →",
     },
     {
-      company: "ホンダ系列企業", tag: "製造・自動車",
-      impact: "全自動化", impactLabel: "定例業務のAI処理",
+      company: "自動車関連の製造業", tag: "製造・自動車",
+      impact: "自動化", impactLabel: "定例業務のAI処理",
       desc: "Excel管理だった社内業務をWebアプリ化。AIエージェントを活用して定例業務の自動化を実現し、担当者が判断業務に集中できる体制を構築。",
       tools: ["Webアプリ開発", "AIエージェント", "業務自動化"],
     },
     {
-      company: "山形大手ファーム企業", tag: "農業・食品",
+      company: "農業・食品企業", tag: "農業・食品",
       impact: "完全移行", impactLabel: "デジタル在庫管理",
       desc: "QRコードを活用した在庫管理システムを設計・実装。アナログ台帳によるミスと時間ロスを解消し、リアルタイム在庫可視化を実現。",
       tools: ["QRコード連携", "在庫管理システム", "業務設計"],
@@ -648,7 +648,7 @@ export default function HomePage() {
     {
       company: "大手スポーツクラブ", tag: "フィットネス",
       impact: "AI分析", impactLabel: "経営レポート自動生成",
-      desc: "GA4データをLooker Studioで可視化し、AI分析で経営陣・店舗スタッフ向け改善提案レポートを自動生成。意思決定スピードを大幅向上。",
+      desc: "GA4データをLooker Studioで可視化し、AI分析で経営陣・店舗スタッフ向け改善提案レポートを自動生成。",
       tools: ["GA4", "Looker Studio", "AI分析"],
     },
   ];

@@ -132,7 +132,7 @@ export default async function CaseStudyPage({ params }: Props) {
         </section>
 
         <section className="cs-section" aria-labelledby="cs-tech">
-          <h2 id="cs-tech">使用技術と開発体制</h2>
+          <h2 id="cs-tech">{cs.devNote ? "使用技術と開発体制" : "使用技術"}</h2>
           <ul className="cs-tags">
             {cs.techStack.map((t) => <li key={t}>{t}</li>)}
           </ul>

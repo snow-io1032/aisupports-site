@@ -644,6 +644,8 @@ export default function HomePage() {
       impact: "完全移行", impactLabel: "デジタル在庫管理",
       desc: "QRコードを活用した在庫管理システムを設計・実装。アナログ台帳によるミスと時間ロスを解消し、リアルタイム在庫可視化を実現。",
       tools: ["QRコード連携", "在庫管理システム", "業務設計"],
+      caseHref: "/case-studies/qr-inventory-agri-food",
+      caseLabel: "QR在庫管理の導入事例を読む →",
     },
     {
       company: "大手スポーツクラブ", tag: "フィットネス",

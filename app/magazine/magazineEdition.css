@@ -1,0 +1,310 @@
+/* Approved 2026-11-03 issue. All selectors are confined to this edition. */
+.magazine-edition{--paper:#fffdf5;--cream:#f6f0d9;--ink:#162b41;--muted:#526575;--blue:#0875b9;--bright:#3ca5e0;--pale:#eaf5fb;--line:#d8e0e3;--soft:#f4f7f8;--red:#a83d2e;--green:#176952;--radius:18px}
+.magazine-edition *{box-sizing:border-box}
+.magazine-edition{scroll-behavior:smooth;scroll-padding-top:32px}
+.magazine-edition{margin:0;background:var(--paper);color:var(--ink);font:16px/1.95 -apple-system,BlinkMacSystemFont,"Noto Sans CJK JP","Yu Gothic",Meiryo,sans-serif;text-rendering:optimizeLegibility}
+.magazine-edition a{text-decoration:underline;color:var(--blue);text-underline-offset:4px;overflow-wrap:anywhere}
+.magazine-edition a:hover{text-decoration-thickness:2px}
+.magazine-edition button,.magazine-edition input{font:inherit}
+.magazine-edition a:focus-visible,.magazine-edition button:focus-visible,.magazine-edition summary:focus-visible,.magazine-edition input:focus-visible{outline:3px solid #0875b9;outline-offset:5px}
+.magazine-edition p{margin:0 0 1em}
+.magazine-edition h1,.magazine-edition h2,.magazine-edition h3,.magazine-edition h4{line-height:1.5;letter-spacing:-.035em;margin:0 0 .75em}
+.magazine-edition h1{font-size:clamp(39px,5.9vw,68px);line-height:1.32;letter-spacing:-.055em}
+.magazine-edition h2{font-size:clamp(27px,3.7vw,38px)}
+.magazine-edition h3{font-size:23px}
+.magazine-edition h4{font-size:17px}
+.magazine-edition small,.magazine-edition .mag-small{font-size:13px;line-height:1.85;color:var(--muted)}
+.magazine-edition strong{font-weight:750}
+.magazine-edition .mag-wrap{max-width:1120px;margin:0 auto;padding:0 36px}
+.magazine-edition .mag-skip{position:absolute;top:-100px;left:16px;background:white;padding:12px;z-index:20}
+.magazine-edition .mag-skip:focus{top:10px}
+.magazine-edition .mag-topbar{border-bottom:1px solid var(--line);background:var(--paper)}
+.magazine-edition .mag-mast{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:86px}
+.magazine-edition .mag-brand{text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:11px;font-size:23px;font-weight:800;letter-spacing:-.035em}
+.magazine-edition .mag-brandmark{display:inline-grid;place-items:center;width:36px;height:36px;background:var(--bright);color:white;border-radius:11px;font-family:Georgia,serif;font-size:27px;box-shadow:0 3px 12px #39a3dd1f}
+.magazine-edition .mag-brand b{color:var(--blue)}
+.magazine-edition .mag-edition{text-align:right;font-size:11px;line-height:1.8;letter-spacing:.11em;color:var(--muted)}
+.magazine-edition .mag-edition strong{display:block;color:var(--ink);font-size:13px}
+.magazine-edition .mag-hero{background:linear-gradient(120deg,#f9f4df 0%,#fdf8e6 60%,#eef7fb 100%);border-bottom:1px solid var(--line)}
+.magazine-edition .mag-hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:52px;padding-top:52px;padding-bottom:50px;align-items:center}
+.magazine-edition .mag-eyebrow{font-size:11px;letter-spacing:.18em;font-weight:800;line-height:1.8;color:var(--blue);margin-bottom:18px}
+.magazine-edition .mag-hero h1 em{color:var(--blue);font-style:normal}
+.magazine-edition .mag-hero-dek{font-size:16px;max-width:550px;margin-top:25px;color:#3e5365}
+.magazine-edition .mag-hero-meta{font-size:12px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+.magazine-edition .mag-hero-meta span+span{border-left:1px solid #bfcbd0;padding-left:12px}
+.magazine-edition .mag-cover-figure{margin:0;position:relative}
+.magazine-edition .mag-cover-sheet{background:#ffffffd9;border:1px solid #d5e4e9;border-radius:20px;padding:27px;box-shadow:0 18px 50px #426b7b12;transform:rotate(2deg)}
+.magazine-edition .mag-sheet-top{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.16em;color:#6c7e8b;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:22px}
+.magazine-edition .mag-sheet-top .mag-dots{display:flex;gap:5px}
+.magazine-edition .mag-dots i{width:5px;height:5px;border-radius:50%;background:#8bbbd5}
+.magazine-edition .mag-sheet-step{display:grid;grid-template-columns:43px 1fr;gap:14px;margin:19px 0}
+.magazine-edition .mag-sheet-step .mag-num{font-family:Georgia,serif;color:var(--bright);font-size:34px;line-height:1.3}
+.magazine-edition .mag-sheet-step strong{display:block;font-size:17px}
+.magazine-edition .mag-sheet-step small{display:block;font-size:12px}
+.magazine-edition .mag-sheet-rule{height:1px;background:#e3ebef;margin-left:57px}
+.magazine-edition .mag-sheet-bottom{background:var(--ink);color:white;font-size:12px;border-radius:10px;padding:13px 15px;margin-top:25px;display:flex;justify-content:space-between}
+.magazine-edition .mag-sheet-bottom b{color:#a9dfff}
+.magazine-edition .mag-cover-figure figcaption{font-size:10px;color:var(--muted);text-align:right;margin-top:17px;letter-spacing:.08em}
+.magazine-edition .mag-toc{display:flex;gap:0;border-bottom:1px solid var(--line);align-items:stretch}
+.magazine-edition .mag-toc a{flex:1;text-decoration:none;font-size:13px;padding:17px 11px;color:var(--ink);white-space:nowrap}
+.magazine-edition .mag-toc a:hover{background:var(--pale)}
+.magazine-edition .mag-toc a span{font-size:10px;color:var(--blue);margin-right:8px}
+.magazine-edition .mag-block{padding:58px 0}
+.magazine-edition .mag-section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:30px}
+.magazine-edition .mag-section-head .mag-eyebrow{margin:0 0 9px}
+.magazine-edition .mag-section-head h2{margin:0}
+.magazine-edition .mag-section-head .mag-aside-note{font-size:12px;color:var(--muted);max-width:230px;margin:0}
+.magazine-edition .mag-brief-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.magazine-edition .mag-brief-item{position:relative;border-left:3px solid var(--bright);padding-left:19px}
+.magazine-edition .mag-brief-item .mag-number{display:block;font-family:Georgia,serif;font-size:30px;color:var(--blue);line-height:1;margin-bottom:15px}
+.magazine-edition .mag-brief-item h3{font-size:19px;margin-bottom:10px}
+.magazine-edition .mag-brief-item p{font-size:14px;color:var(--muted);margin:0}
+.magazine-edition .mag-news-block{padding-top:6px}
+.magazine-edition .mag-feature{border:1px solid var(--line);border-radius:var(--radius);background:white;overflow:hidden;margin-bottom:26px}
+.magazine-edition .mag-feature-body{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;padding:34px}
+.magazine-edition .mag-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.05em;background:var(--pale);padding:4px 10px;border-radius:4px;margin-bottom:14px}
+.magazine-edition .mag-date{font-size:11px;color:var(--muted);display:block;margin-bottom:18px}
+.magazine-edition .mag-feature h3{font-size:29px;margin-bottom:12px}
+.magazine-edition .mag-feature p{font-size:14px}
+.magazine-edition .mag-figure-panel{background:var(--soft);border-radius:12px;padding:22px;margin:0;align-self:start}
+.magazine-edition .mag-figure-title{font-size:12px;font-weight:700;line-height:1.7;margin-bottom:22px}
+.magazine-edition .mag-bar-row{margin-bottom:22px}
+.magazine-edition .mag-bar-meta{display:flex;justify-content:space-between;gap:10px;font-size:11px;margin-bottom:7px}
+.magazine-edition .mag-bar-meta b{font-size:17px;line-height:1.5}
+.magazine-edition .mag-bar-track{height:12px;background:#e3e9ec;border-radius:4px;overflow:hidden}
+.magazine-edition .mag-bar{height:100%;background:var(--ink);border-radius:4px}
+.magazine-edition .mag-bar.mag-blue{background:var(--bright)}
+.magazine-edition .mag-bar.mag-mid{background:#6c97b3}
+.magazine-edition .mag-bar-note{font-size:11px;color:var(--muted);margin-top:18px}
+.magazine-edition .mag-bar-legend{margin:0;padding-top:11px;border-top:1px solid #dae3e8;color:var(--blue);font-weight:700;font-size:13px}
+.magazine-edition .mag-source-line{padding:16px 34px;background:#f8fafb;border-top:1px solid var(--line);font-size:11px;line-height:1.9;color:var(--muted)}
+.magazine-edition .mag-practical{border-left:3px solid var(--bright);padding-left:15px;margin:20px 0}
+.magazine-edition .mag-practical b{display:block;font-size:12px;color:var(--blue);margin-bottom:4px}
+.magazine-edition .mag-practical p{margin:0}
+.magazine-edition .mag-caution{font-size:12px!important;line-height:1.85;color:#755c32;background:#fbf5e6;padding:12px 15px;border-radius:8px;margin-bottom:0}
+.magazine-edition .mag-news-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.magazine-edition .mag-story{background:white;border:1px solid var(--line);border-radius:var(--radius);display:flex;flex-direction:column;overflow:hidden}
+.magazine-edition .mag-story-body{padding:28px 29px;flex:1}
+.magazine-edition .mag-story h3{font-size:23px}
+.magazine-edition .mag-story p{font-size:14px}
+.magazine-edition .mag-story .mag-source-line{padding:15px 29px}
+.magazine-edition .mag-story .mag-practical p{font-size:13px}
+.magazine-edition .mag-story-number{font-family:Georgia,serif;font-size:32px;color:var(--blue);letter-spacing:-.02em;white-space:nowrap}
+.magazine-edition .mag-lab-block{background:#eef5f8;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.magazine-edition .mag-lab-intro{max-width:700px;margin-bottom:28px;color:var(--muted);font-size:14px}
+.magazine-edition .mag-lab{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:34px;margin-bottom:25px}
+.magazine-edition .mag-lab:last-child{margin-bottom:0}
+.magazine-edition .mag-lab-top{display:flex;justify-content:space-between;gap:20px;margin-bottom:16px}
+.magazine-edition .mag-lab-code{font-size:11px;font-weight:750;letter-spacing:.15em;color:var(--blue)}
+.magazine-edition .mag-badge{font-size:11px;line-height:1.8;border:1px solid #cbdce6;color:var(--muted);border-radius:999px;padding:3px 10px;align-self:start;white-space:nowrap}
+.magazine-edition .mag-lab h3{font-size:28px}
+.magazine-edition .mag-lab p{font-size:14px}
+.magazine-edition .mag-lab-columns{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:24px}
+.magazine-edition .mag-input-box{background:var(--cream);border-radius:12px;padding:21px}
+.magazine-edition .mag-input-box .mag-mini-label{color:#6b5d36}
+.magazine-edition .mag-mini-label{display:block;font-size:11px;font-weight:750;letter-spacing:.07em;color:var(--blue);margin-bottom:10px}
+.magazine-edition .mag-input-box p:last-child{margin:0}
+.magazine-edition .mag-result-box{border:1px solid var(--line);border-radius:12px;padding:21px}
+.magazine-edition .mag-checklist{margin:0;padding-left:1.25em;font-size:14px}
+.magazine-edition .mag-checklist li{padding-left:4px;margin-bottom:10px}
+.magazine-edition .mag-checklist li:last-child{margin-bottom:0}
+.magazine-edition .mag-conclusion{border-top:1px solid var(--line);padding-top:18px;margin-top:24px}
+.magazine-edition .mag-conclusion strong{color:var(--blue)}
+.magazine-edition .mag-conclusion p{margin:0}
+.magazine-edition .mag-method{font-size:11px!important;color:var(--muted);margin:20px 0 0}
+.magazine-edition .mag-details{border-top:1px solid var(--line);margin-top:20px}
+.magazine-edition summary{cursor:pointer;padding:16px 2px;font-size:13px;font-weight:700;line-height:1.7}
+.magazine-edition summary::marker{color:var(--blue)}
+.magazine-edition details[open] summary{margin-bottom:6px}
+.magazine-edition details .mag-detail-body{font-size:13px;padding:0 5px 18px}
+.magazine-edition details ol{padding-left:1.5em;margin:0}
+.magazine-edition details li{margin:0 0 10px;padding-left:4px}
+.magazine-edition .mag-prompt{background:var(--soft);padding:21px;border-radius:10px;font-size:13px;white-space:pre-wrap;line-height:1.9;font-family:inherit;margin:0}
+.magazine-edition .mag-lab-conditions{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:23px 0}
+.magazine-edition .mag-condition{background:#f7fafb;padding:16px;font-size:11px;line-height:1.7}
+.magazine-edition .mag-condition b{display:block;color:var(--ink);font-size:22px;line-height:1.5}
+.magazine-edition .mag-experiment{background:var(--ink);color:white;border-radius:14px;padding:27px;margin:24px 0}
+.magazine-edition .mag-experiment .mag-mini-label{color:#9bd6f5}
+.magazine-edition .mag-experiment-grid{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:22px}
+.magazine-edition .mag-experiment-stat{font-size:11px;color:#cbdde7}
+.magazine-edition .mag-experiment-stat b{display:block;color:white;font-size:32px;line-height:1.5;letter-spacing:-.04em;margin-top:5px}
+.magazine-edition .mag-experiment-stat b.mag-loss{color:#ffb4a7}
+.magazine-edition .mag-experiment-caption{font-size:11px!important;color:#cbdde7;margin:18px 0 0;border-top:1px solid #ffffff29;padding-top:16px}
+.magazine-edition .mag-formula{display:grid;grid-template-columns:1fr 1fr;gap:13px 23px;margin-top:25px}
+.magazine-edition .mag-formula div{background:var(--soft);padding:14px 17px;font-size:12px;border-radius:8px;line-height:1.8}
+.magazine-edition .mag-formula b{display:block;font-size:13px;margin-bottom:3px}
+.magazine-edition .mag-simulator{margin-top:28px;border:1px solid #b7d8eb;border-radius:12px;padding:22px;background:#f8fcff}
+.magazine-edition .mag-simulator h4{font-size:16px;margin-bottom:8px}
+.magazine-edition .mag-simulator p{font-size:12px;color:var(--muted)}
+.magazine-edition .mag-sim-controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.magazine-edition .mag-sim-controls label{font-size:13px}
+.magazine-edition .mag-sim-controls input{width:100px;padding:8px 10px;background:#fff;border:1px solid #a2bbc9;border-radius:6px}
+.magazine-edition .mag-sim-controls button{border:1px solid #a9c5d6;background:white;color:var(--blue);border-radius:6px;font-size:12px;padding:9px 12px;cursor:pointer}
+.magazine-edition .mag-sim-controls button:hover{background:#eaf5fb}
+.magazine-edition .mag-sim-output{display:grid;grid-template-columns:1fr 1fr;gap:15px;border-top:1px solid #d6e7f0;padding-top:16px;font-size:12px}
+.magazine-edition .mag-sim-output strong{display:block;font-size:23px;margin-top:4px}
+.magazine-edition .mag-sim-output .mag-negative{color:var(--red)}
+.magazine-edition .mag-sim-output .mag-positive{color:var(--green)}
+.magazine-edition .mag-sim-error{color:var(--red)!important;margin:10px 0 0;font-size:12px}
+.magazine-edition .mag-next-block{padding:55px 0}
+.magazine-edition .mag-next-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px;align-items:start}
+.magazine-edition .mag-next-grid h2{font-size:32px}
+.magazine-edition .mag-next-grid p{font-size:14px;color:var(--muted)}
+.magazine-edition .mag-action-list{counter-reset:steps;list-style:none;padding:0;margin:0}
+.magazine-edition .mag-action-list li{counter-increment:steps;display:grid;grid-template-columns:32px 1fr;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);font-size:14px}
+.magazine-edition .mag-action-list li::before{content:counter(steps);display:grid;place-items:center;background:var(--pale);color:var(--blue);border-radius:50%;height:30px;width:30px;font-size:12px;font-weight:800}
+.magazine-edition .mag-action-list li:first-child{padding-top:0}
+.magazine-edition .mag-sources-block{background:#f5f6f3;border-top:1px solid var(--line);padding:45px 0}
+.magazine-edition .mag-sources-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:50px}
+.magazine-edition .mag-sources-grid h3{font-size:18px}
+.magazine-edition .mag-sources-list{list-style:none;padding:0;margin:0;counter-reset:sources}
+.magazine-edition .mag-sources-list li{font-size:12px;line-height:1.8;margin:0 0 18px;padding-left:26px;position:relative;counter-increment:sources}
+.magazine-edition .mag-sources-list li::before{content:counter(sources,decimal-leading-zero);position:absolute;left:0;color:var(--blue);font-size:10px;top:2px}
+.magazine-edition .mag-sources-list small{font-size:11px;display:block;margin-top:3px}
+.magazine-edition .mag-policy p{font-size:12px;line-height:1.95;color:var(--muted)}
+.magazine-edition .mag-policy h4{font-size:13px;margin-top:22px}
+.magazine-edition .mag-sources-block .mag-eyebrow{margin-bottom:24px}
+.magazine-edition .mag-cta{border-top:1px solid var(--line);padding-top:25px;margin-top:25px}
+.magazine-edition .mag-cta h4{font-size:17px;margin-top:0}
+.magazine-edition .mag-cta-link{display:inline-block;border:1px solid #a2c6db;border-radius:999px;text-decoration:none;padding:9px 17px;font-size:12px;font-weight:700;background:white}
+.magazine-edition .mag-footer{padding:27px 0 35px}
+.magazine-edition .mag-footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:10px;color:var(--muted)}
+.magazine-edition .mag-footer a{font-size:12px}
+.magazine-edition .mag-footer strong{display:block;font-size:13px;color:var(--ink)}
+.magazine-edition .mag-print-note{display:none}
+@media(max-width:800px){
+.magazine-edition .mag-wrap{padding:0 24px}
+.magazine-edition .mag-hero-grid{gap:30px;grid-template-columns:1.2fr 1fr}
+.magazine-edition .mag-hero h1{font-size:46px}
+.magazine-edition .mag-cover-sheet{padding:21px}
+.magazine-edition .mag-sheet-step{grid-template-columns:32px 1fr;gap:9px}
+.magazine-edition .mag-sheet-step strong{font-size:15px}
+.magazine-edition .mag-feature-body{padding:27px;gap:25px}
+.magazine-edition .mag-brief-grid{gap:20px}
+.magazine-edition .mag-brief-item h3{font-size:17px}
+.magazine-edition .mag-sources-grid{gap:30px}
+.magazine-edition .mag-toc a{font-size:12px;padding:15px 7px}
+.magazine-edition .mag-toc a span{display:block}
+.magazine-edition .mag-experiment-stat b{font-size:27px}
+}
+@media(max-width:640px){
+.magazine-edition{font-size:15px}
+.magazine-edition .mag-wrap{padding:0 20px}
+.magazine-edition .mag-mast{min-height:73px;gap:10px}
+.magazine-edition .mag-brand{font-size:21px;gap:8px}
+.magazine-edition .mag-brandmark{width:31px;height:31px;font-size:24px;border-radius:9px}
+.magazine-edition .mag-edition{font-size:9px;letter-spacing:.06em}
+.magazine-edition .mag-edition strong{font-size:11px}
+.magazine-edition .mag-hero-grid{display:block;padding-top:37px;padding-bottom:30px}
+.magazine-edition .mag-hero h1{font-size:clamp(37px,10.6vw,58px);line-height:1.36}
+.magazine-edition .mag-hero-dek{font-size:14px;margin-top:20px}
+.magazine-edition .mag-hero-meta{font-size:10px;gap:8px;margin-top:22px}
+.magazine-edition .mag-hero-meta span+span{padding-left:8px}
+.magazine-edition .mag-cover-figure{margin-top:29px}
+.magazine-edition .mag-cover-sheet{transform:none;padding:19px 21px;border-radius:14px;box-shadow:0 12px 30px #426b7b0c}
+.magazine-edition .mag-sheet-top{margin-bottom:13px;padding-bottom:11px}
+.magazine-edition .mag-sheet-step{margin:12px 0;grid-template-columns:33px 1fr;gap:12px}
+.magazine-edition .mag-sheet-step .mag-num{font-size:28px}
+.magazine-edition .mag-sheet-step strong{font-size:15px}
+.magazine-edition .mag-sheet-step small{font-size:11px}
+.magazine-edition .mag-sheet-rule{margin-left:45px}
+.magazine-edition .mag-sheet-bottom{margin-top:16px;padding:10px 13px;font-size:11px}
+.magazine-edition .mag-cover-figure figcaption{font-size:9px;margin-top:9px}
+.magazine-edition .mag-toc{display:grid;grid-template-columns:repeat(4,1fr)}
+.magazine-edition .mag-toc a{text-align:center;white-space:normal;font-size:10px;line-height:1.6;padding:12px 4px}
+.magazine-edition .mag-toc a span{margin:0 0 3px;font-size:9px}
+.magazine-edition .mag-block{padding:39px 0}
+.magazine-edition .mag-section-head{display:block;padding-bottom:17px;margin-bottom:24px}
+.magazine-edition .mag-section-head h2{font-size:26px}
+.magazine-edition .mag-section-head .mag-aside-note{margin-top:10px;max-width:none;font-size:11px}
+.magazine-edition .mag-brief-grid{grid-template-columns:1fr;gap:22px}
+.magazine-edition .mag-brief-item{padding-left:16px;display:grid;grid-template-columns:32px 1fr;gap:10px}
+.magazine-edition .mag-brief-item .mag-number{font-size:26px;margin:0;grid-row:span 2}
+.magazine-edition .mag-brief-item h3{font-size:17px;margin:0}
+.magazine-edition .mag-brief-item p{font-size:13px}
+.magazine-edition .mag-news-block{padding-top:0}
+.magazine-edition .mag-feature-body{display:block;padding:24px 21px}
+.magazine-edition .mag-feature h3{font-size:25px}
+.magazine-edition .mag-feature p{font-size:13px}
+.magazine-edition .mag-figure-panel{margin-top:24px;padding:20px}
+.magazine-edition .mag-source-line{padding:14px 21px}
+.magazine-edition .mag-news-grid{grid-template-columns:1fr;gap:20px}
+.magazine-edition .mag-story-body{padding:24px 21px}
+.magazine-edition .mag-story h3{font-size:22px}
+.magazine-edition .mag-story p{font-size:13px}
+.magazine-edition .mag-story .mag-source-line{padding:14px 21px}
+.magazine-edition .mag-lab{padding:25px 20px}
+.magazine-edition .mag-lab-top{margin-bottom:14px;gap:8px}
+.magazine-edition .mag-lab h3{font-size:24px}
+.magazine-edition .mag-lab p{font-size:13px}
+.magazine-edition .mag-badge{font-size:10px}
+.magazine-edition .mag-lab-columns{grid-template-columns:1fr;gap:16px;margin-top:18px}
+.magazine-edition .mag-input-box,.magazine-edition .mag-result-box{padding:18px}
+.magazine-edition .mag-lab-conditions{grid-template-columns:1fr 1fr}
+.magazine-edition .mag-condition{padding:13px}
+.magazine-edition .mag-condition b{font-size:20px}
+.magazine-edition .mag-experiment{padding:20px}
+.magazine-edition .mag-experiment-grid{grid-template-columns:1fr;gap:15px}
+.magazine-edition .mag-experiment-stat{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.magazine-edition .mag-experiment-stat b{font-size:28px;margin:0;white-space:nowrap}
+.magazine-edition .mag-formula{grid-template-columns:1fr;gap:10px}
+.magazine-edition .mag-simulator{padding:18px}
+.magazine-edition .mag-sim-output strong{font-size:21px}
+.magazine-edition .mag-sim-controls{gap:9px}
+.magazine-edition .mag-sim-controls button{font-size:11px;padding:8px}
+.magazine-edition .mag-next-block{padding:40px 0}
+.magazine-edition .mag-next-grid{grid-template-columns:1fr;gap:18px}
+.magazine-edition .mag-next-grid h2{font-size:27px}
+.magazine-edition .mag-next-grid p{font-size:13px}
+.magazine-edition .mag-action-list li{font-size:13px}
+.magazine-edition .mag-sources-block{padding:35px 0}
+.magazine-edition .mag-sources-grid{grid-template-columns:1fr;gap:28px}
+.magazine-edition .mag-footer-inner{align-items:start}
+.magazine-edition .mag-footer-inner p{max-width:240px;margin:0}
+.magazine-edition .mag-footer a{white-space:nowrap;font-size:10px}
+.magazine-edition details .mag-detail-body{padding-left:0;padding-right:0}
+.magazine-edition .mag-prompt{padding:16px;font-size:12px}
+}
+@media(max-width:400px){
+.magazine-edition .mag-experiment-stat{display:block}
+.magazine-edition .mag-experiment-stat b{margin-top:3px}
+.magazine-edition .mag-hero-meta{max-width:280px}
+.magazine-edition .mag-sim-output{grid-template-columns:1fr}
+.magazine-edition .mag-lab-top{flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){
+.magazine-edition{scroll-behavior:auto}
+}
+@media print{
+.magazine-edition{background:white;color:#132b3c;font-size:10pt}
+.magazine-edition .mag-wrap{max-width:none;padding:0}
+.magazine-edition .mag-skip,.magazine-edition .mag-toc,.magazine-edition .mag-simulator,.magazine-edition .mag-cta,.magazine-edition .mag-cover-figure,.magazine-edition .mag-footer a{display:none}
+.magazine-edition .mag-hero{background:#f8f5e8}
+.magazine-edition .mag-hero-grid{display:block;padding:25px 0}
+.magazine-edition .mag-hero h1{font-size:31pt}
+.magazine-edition .mag-hero-dek{font-size:11pt}
+.magazine-edition .mag-mast{min-height:52px}
+.magazine-edition .mag-block,.magazine-edition .mag-next-block,.magazine-edition .mag-sources-block{padding:25px 0}
+.magazine-edition .mag-feature-body{padding:20px}
+.magazine-edition .mag-news-grid{display:block}
+.magazine-edition .mag-story{margin-bottom:18px}
+.magazine-edition .mag-story,.magazine-edition .mag-lab,.magazine-edition .mag-feature{break-inside:avoid}
+.magazine-edition .mag-brief-grid{gap:20px}
+.magazine-edition .mag-lab-block{background:white}
+.magazine-edition .mag-section-head{margin-bottom:20px}
+.magazine-edition .mag-lab{padding:20px}
+.magazine-edition .mag-experiment{background:#edf4f7;color:#162b41}
+.magazine-edition .mag-experiment-stat,.magazine-edition .mag-experiment-caption{color:#385565}
+.magazine-edition .mag-experiment-stat b{color:#162b41}
+.magazine-edition .mag-experiment-stat b.mag-loss{color:#a83d2e}
+.magazine-edition .mag-experiment .mag-mini-label{color:#0875b9}
+.magazine-edition .mag-sources-grid{gap:25px}
+.magazine-edition .mag-print-note{display:block}
+.magazine-edition *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.magazine-edition [id]{scroll-margin-top:100px}
+.magazine-edition .mag-skip:focus{position:fixed;top:80px;z-index:1001}
+
+
+/* Keep in-page sections visible below the site header. */
+.magazine-edition [id] { scroll-margin-top: 88px; }

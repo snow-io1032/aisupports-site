@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -90,13 +91,15 @@ export default function SiteHeader() {
             <a href="/#ai-agent">AIエージェント</a>
             <a href="/#consulting">コンサルティング</a>
             <a href="/#process">進め方</a>
+            <Link href="/magazine">AI実践マガジン</Link>
             <a href="/#contact">お問い合わせ</a>
           </nav>
 
           <a className="btn btn-sm btn-primary" href="/#contact">無料相談</a>
           <button
             className={`hamburger${menuOpen ? " open" : ""}`}
-            aria-label="メニューを開く"
+            aria-label={menuOpen ? "メニューを閉じる" : "メニューを開く"}
+            aria-controls="site-mobile-menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen(v => !v)}
           >
@@ -106,7 +109,7 @@ export default function SiteHeader() {
       </header>
       
       {/* モバイルメニュー（スマホ版） */}
-      <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
+      <div id="site-mobile-menu" className={`mobile-menu${menuOpen ? " open" : ""}`} inert={!menuOpen}>
         <a href="/#results"    onClick={close}>実績</a>
         <a href="/#services"   onClick={close}>サービス</a>
         
@@ -119,6 +122,7 @@ export default function SiteHeader() {
         <a href="/#ai-agent"   onClick={close}>AIエージェント</a>
         <a href="/#consulting" onClick={close}>コンサルティング</a>
         <a href="/#process"    onClick={close}>進め方</a>
+        <Link href="/magazine" onClick={close}>AI実践マガジン</Link>
         <a href="/#contact"    onClick={close}>お問い合わせ</a>
       </div>
       <div className="topbar-spacer" />

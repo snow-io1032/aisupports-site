@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useLayoutEffect, useRef, useState, useCallback, FormEvent } from "react";
 import { homeFaqs } from "./data/faqs";
+import { magazineIssues } from "./data/magazineIssues";
 
 /* ══════════════════════════════════════════════════════════════
    Custom Cursor
@@ -764,6 +765,22 @@ export default function HomePage() {
               <div className="stat-label">{s.label}</div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── AI Practice Magazine ── */}
+      <section className="home-magazine" aria-labelledby="home-magazine-title">
+        <div className="home-magazine-inner">
+          <div>
+            <p className="home-magazine-label">AI PRACTICE MAGAZINE</p>
+            <h2 id="home-magazine-title">AIニュースを、仕事の判断に。</h2>
+            <p>出典と数字を確かめ、架空データで試す。AI実践マガジンをお届けします。</p>
+          </div>
+          <div className="home-magazine-latest">
+            <span>最新号 {magazineIssues[0].date.replaceAll("-", ".")}</span>
+            <Link href={`/magazine/${magazineIssues[0].date}`}>{magazineIssues[0].title} →</Link>
+            <Link className="home-magazine-archive" href="/magazine">マガジン一覧を見る</Link>
+          </div>
         </div>
       </section>
 

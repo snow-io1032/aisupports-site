@@ -713,3 +713,28 @@ section[id], #top { scroll-margin-top: 80px; }
 /* トップの実績カードから導入事例ページへのリンク */
 .result-case-link { display: inline-block; margin-top: 16px; color: var(--blue-dark); font-size: 0.87rem; font-weight: 700; }
 .result-case-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* AI実践マガジンのホーム導線。既存のサービス・問い合わせは変更しない。 */
+.home-magazine { padding: 34px 0; background: #eaf5fb; border-bottom: 1px solid #d8e0e3; color: #162b41; }
+.home-magazine-inner { width: min(100%, 1200px); margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; }
+.home-magazine-label { font-size: 11px; font-weight: 800; letter-spacing: .14em; color: #0875b9; margin: 0 0 10px; }
+.home-magazine h2 { font-size: 23px; line-height: 1.6; margin: 0 0 10px; }
+.home-magazine p:last-child { font-size: 13px; line-height: 1.9; color: #526575; margin: 0; }
+.home-magazine-latest { border-left: 1px solid #bad5e6; padding-left: 30px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.home-magazine-latest span { color: #526575; font-size: 12px; }
+.home-magazine-latest > a { color: #0875b9; font-size: 19px; font-weight: 700; line-height: 1.6; text-decoration: underline; text-underline-offset: 4px; }
+.home-magazine-latest > a.home-magazine-archive { font-size: 12px; font-weight: 500; }
+.home-magazine a:focus-visible { outline: 3px solid #0875b9; outline-offset: 5px; }
+/* メニュー追加後もタブレットで重ならず、全リンクまでスクロールできるようにする。 */
+@media (min-width: 769px) and (max-width: 1180px) {
+  .nav { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: block; position: fixed; top: 68px; left: 0; right: 0; z-index: 999; background: rgba(255,253,245,.98); border-bottom: 1px solid var(--border); max-height: 0; overflow: hidden; }
+  .mobile-menu.open { max-height: calc(100vh - 68px); max-height: calc(100dvh - 68px); padding: 12px 0 20px; overflow-y: auto; }
+}
+@media (max-width: 768px) {
+  .mobile-menu.open { max-height: calc(100vh - 58px); max-height: calc(100dvh - 58px); overflow-y: auto; }
+  .home-magazine-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 22px; }
+  .home-magazine-latest { padding: 20px 0 0; border-left: 0; border-top: 1px solid #bad5e6; }
+  .home-magazine h2 { font-size: 21px; }
+}

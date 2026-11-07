@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -72,55 +73,27 @@ const terms = [
 
 export default function TermsPage() {
   return (
-    <main style={{ minHeight: "100vh", background: "#FFFDF5" }}>
-      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "48px 24px 80px" }}>
+    <main className="legal">
+      <header className="pg-head">
+        <p className="kicker" data-head>TERMS OF SERVICE</p>
+        <h1 data-head>利用規約</h1>
+        <p className="upd" data-head>制定日：2024年　最終更新：2026年3月</p>
+      </header>
 
-        <div style={{ textAlign: "center", marginBottom: "16px" }}>
-          <span style={{
-            background: "#E8F4FD", color: "#3B9EE8",
-            padding: "6px 20px", borderRadius: "999px",
-            fontSize: "13px", fontWeight: 600, letterSpacing: "0.08em",
-          }}>TERMS OF SERVICE</span>
-        </div>
+      {terms.map((t, i) => (
+        <section className="lsec" data-r key={i}>
+          <h2>{t.title}</h2>
+          <p>{t.content}</p>
+        </section>
+      ))}
 
-        <h1 style={{
-          textAlign: "center", fontSize: "2rem", fontWeight: 800,
-          color: "#1A1A2E", marginBottom: "8px", marginTop: "12px",
-        }}>利用規約</h1>
-        <p style={{
-          textAlign: "center", color: "#8A8AAA", marginBottom: "40px", fontSize: "14px",
-        }}>制定日：2024年　最終更新：2026年3月</p>
+      <p className="sign" data-r>
+        mlma（AISupports）<br />
+        制定：2024年　改訂：2026年3月
+      </p>
 
-        {terms.map((t, i) => (
-          <div key={i} style={{
-            background: "#FFFFFF", borderRadius: "12px",
-            padding: "28px 32px", marginBottom: "12px",
-            boxShadow: "0 2px 12px rgba(180,150,80,0.06)",
-          }}>
-            <h2 style={{
-              fontSize: "1rem", fontWeight: 700, color: "#3B9EE8",
-              marginBottom: "12px", marginTop: 0,
-            }}>{t.title}</h2>
-            <p style={{
-              color: "#4A4A6A", lineHeight: 1.9, fontSize: "14px",
-              whiteSpace: "pre-line", margin: 0,
-            }}>{t.content}</p>
-          </div>
-        ))}
-
-        <p style={{
-          textAlign: "center", color: "#8A8AAA", marginTop: "40px", fontSize: "14px",
-        }}>
-          mlma（AISupports）<br />
-          制定：2024年　改訂：2026年3月
-        </p>
-
-        <div style={{ textAlign: "center", marginTop: "32px" }}>
-          <a href="/" style={{
-            color: "#3B9EE8", fontSize: "14px", fontWeight: 600,
-            textDecoration: "none", borderBottom: "1px solid #3B9EE8", paddingBottom: "2px",
-          }}>← トップページに戻る</a>
-        </div>
+      <div className="back">
+        <Link className="tlink" href="/">← トップページに戻る</Link>
       </div>
     </main>
   );

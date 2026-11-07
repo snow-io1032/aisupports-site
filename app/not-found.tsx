@@ -10,30 +10,18 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main style={{ minHeight: "70vh", background: "#FFFDF5" }}>
-      <div style={{ maxWidth: "640px", margin: "0 auto", padding: "96px 24px 80px", textAlign: "center" }}>
-        <div style={{ marginBottom: "16px" }}>
-          <span style={{
-            background: "#E8F4FD", color: "#3B9EE8",
-            padding: "6px 20px", borderRadius: "999px",
-            fontSize: "13px", fontWeight: 600, letterSpacing: "0.08em",
-          }}>404</span>
-        </div>
+    <main className="nf">
+      <p className="kicker">404</p>
+      <h1>ページが見つかりません</h1>
 
-        <h1 style={{
-          fontSize: "1.75rem", fontWeight: 800,
-          color: "#1A1A2E", marginTop: "12px", marginBottom: "16px",
-        }}>ページが見つかりません</h1>
+      <p>
+        お探しのページは移動または削除された可能性があります。<br />
+        トップページから目的の情報をお探しください。
+      </p>
 
-        <p style={{ color: "#555", lineHeight: 1.9, marginBottom: "40px" }}>
-          お探しのページは移動または削除された可能性があります。<br />
-          トップページから目的の情報をお探しください。
-        </p>
-
-        <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
-          <Link className="btn btn-primary" href="/">トップページへ戻る</Link>
-          <Link className="btn btn-outline" href="/#contact">AI導入・業務改善について相談する</Link>
-        </div>
+      <div className="acts">
+        <Link className="btn btn-ink" href="/">トップページへ戻る</Link>
+        <Link className="btn btn-line" href="/#contact">AI導入・業務改善について相談する</Link>
       </div>
     </main>
   );

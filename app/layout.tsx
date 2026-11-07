@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import SiteHeader from "./components/SiteHeader";
+import SiteFooter from "./components/SiteFooter";
+import Motion from "./components/Motion";
 
 // 全ページ共通のメタデータ。
 // canonical はここでは設定しない（下層ページへ継承され、全ページがトップを指してしまうため）。
@@ -38,7 +40,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FFF8E7",
+  themeColor: "#FFFDF8",
 };
 
 // Organization は事業者情報なので全ページ共通で出力する。
@@ -53,6 +55,8 @@ const jsonLdOrg = {
   "serviceType": ["AI導入支援", "業務自動化", "DXコンサルティング", "AIエージェント開発"],
 };
 
+const motionBoot = `(function(){try{if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;var r=document.documentElement;r.classList.add('motion');setTimeout(function(){if(!window.__motionOn)r.classList.remove('motion')},3500)}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -65,10 +69,18 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }}
         />
+        {/* 動きを有効にする人だけ、表示前の要素を隠す。JSが読み込めない場合は数秒後に全部表示 */}
+        <script dangerouslySetInnerHTML={{ __html: motionBoot }} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
       <body>
         <SiteHeader />
         {children}
+        <SiteFooter />
+        <Motion />
       </body>
     </html>
   );

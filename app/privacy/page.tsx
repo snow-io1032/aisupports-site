@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -70,53 +71,27 @@ Cookieを通じて匿名のアクセス情報を収集する場合がありま�
 
 export default function PrivacyPage() {
   return (
-    <main style={{ minHeight: "100vh", background: "#FFFDF5" }}>
-      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "48px 24px 80px" }}>
+    <main className="legal">
+      <header className="pg-head">
+        <p className="kicker" data-head>PRIVACY POLICY</p>
+        <h1 data-head>プライバシーポリシー</h1>
+        <p className="upd" data-head>制定日：2024年　最終更新：2026年3月</p>
+      </header>
 
-        <div style={{ textAlign: "center", marginBottom: "16px" }}>
-          <span style={{
-            background: "#E8F4FD", color: "#3B9EE8",
-            padding: "6px 20px", borderRadius: "999px",
-            fontSize: "13px", fontWeight: 600, letterSpacing: "0.08em",
-          }}>PRIVACY POLICY</span>
-        </div>
+      <p className="intro" data-r>
+        mlma（AISupports、以下「当社」）は、お客様の個人情報保護を重要な責務と考え、
+        以下のプライバシーポリシーに従って適切に取り扱います。
+      </p>
 
-        <h1 style={{
-          textAlign: "center", fontSize: "2rem", fontWeight: 800,
-          color: "#1A1A2E", marginBottom: "8px", marginTop: "12px",
-        }}>プライバシーポリシー</h1>
-        <p style={{
-          textAlign: "center", color: "#8A8AAA", marginBottom: "40px", fontSize: "14px",
-        }}>制定日：2024年　最終更新：2026年3月</p>
+      {sections.map((s, i) => (
+        <section className="lsec" data-r key={i}>
+          <h2>{s.title}</h2>
+          <p>{s.content}</p>
+        </section>
+      ))}
 
-        <p style={{ color: "#4A4A6A", lineHeight: 1.9, marginBottom: "32px", fontSize: "15px" }}>
-          mlma（AISupports、以下「当社」）は、お客様の個人情報保護を重要な責務と考え、
-          以下のプライバシーポリシーに従って適切に取り扱います。
-        </p>
-
-        {sections.map((s, i) => (
-          <div key={i} style={{
-            background: "#FFFFFF", borderRadius: "12px",
-            padding: "28px 32px", marginBottom: "12px",
-            boxShadow: "0 2px 12px rgba(180,150,80,0.06)",
-          }}>
-            <h2 style={{
-              fontSize: "1rem", fontWeight: 700, color: "#3B9EE8",
-              marginBottom: "12px", marginTop: 0,
-            }}>{s.title}</h2>
-            <p style={{
-              color: "#4A4A6A", lineHeight: 1.9, fontSize: "14px",
-              whiteSpace: "pre-line", margin: 0,
-            }}>{s.content}</p>
-          </div>
-        ))}
-
-        <div style={{ textAlign: "center", marginTop: "48px" }}>
-          <a href="/" style={{
-            color: "#3B9EE8", fontSize: "14px", fontWeight: 600,
-            textDecoration: "none", borderBottom: "1px solid #3B9EE8", paddingBottom: "2px",
-          }}>← トップページに戻る</a>
-        </div>
+      <div className="back">
+        <Link className="tlink" href="/">← トップページに戻る</Link>
       </div>
     </main>
   );

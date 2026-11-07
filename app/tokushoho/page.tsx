@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -83,120 +84,59 @@ const rows = [
 
 export default function TokushohoPage() {
   return (
-    <main style={{ minHeight: "100vh", background: "#FFFDF5" }}>
-      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "48px 24px 80px" }}>
-
-        <div style={{ textAlign: "center", marginBottom: "16px" }}>
-          <span style={{
-            background: "#E8F4FD", color: "#3B9EE8",
-            padding: "6px 20px", borderRadius: "999px",
-            fontSize: "13px", fontWeight: 600, letterSpacing: "0.08em",
-          }}>LEGAL</span>
-        </div>
-
-        <h1 style={{
-          textAlign: "center", fontSize: "1.75rem", fontWeight: 800,
-          color: "#1A1A2E", marginBottom: "12px", marginTop: "12px",
-          lineHeight: 1.5,
-        }}>特定商取引法に基づく表記</h1>
-
-        <p style={{
-          textAlign: "center", color: "#4A4A6A", fontSize: "14px",
-          lineHeight: 1.9, marginBottom: "48px",
-        }}>
+    <main className="legal">
+      <header className="pg-head">
+        <p className="kicker" data-head>LEGAL</p>
+        <h1 data-head>特定商取引法に基づく表記</h1>
+        <p className="p-lead" data-head>
           特定商取引法第11条（通信販売についての広告）に基づき、以下のとおり表示します。
         </p>
+      </header>
 
-        <div style={{
-          background: "#FFFFFF", borderRadius: "16px",
-          boxShadow: "0 4px 24px rgba(180,150,80,0.08)",
-          overflow: "hidden", marginBottom: "48px",
-        }}>
-          {rows.map((row, i) => (
-            <div key={i} style={{
-              display: "grid", gridTemplateColumns: "180px 1fr",
-              borderBottom: i < rows.length - 1 ? "1px solid #F0EBE0" : "none",
-            }}>
-              <div style={{
-                padding: "20px 24px", background: "#FFF8E7",
-                color: "#4A4A6A", fontWeight: 600, fontSize: "14px",
-                whiteSpace: "pre-line", lineHeight: 1.7,
-              }}>{row.label}</div>
-              <div style={{
-                padding: "20px 24px", color: "#1A1A2E", fontSize: "15px",
-                whiteSpace: "pre-line", lineHeight: 1.9,
-              }}>{row.value}</div>
-            </div>
-          ))}
-        </div>
+      <div className="dlist" data-list>
+        {rows.map((row, i) => (
+          <div className="r" key={i}>
+            <div className="k">{row.label}</div>
+            <div className="val">{row.value}</div>
+          </div>
+        ))}
+      </div>
 
-        {/* ── 料金 ── */}
-        <h2 style={{
-          fontSize: "1.2rem", fontWeight: 700, color: "#1A1A2E",
-          marginBottom: "20px", marginTop: 0,
-        }}>料金</h2>
+      {/* ── 料金 ── */}
+      <h2 className="sub" data-r>料金</h2>
 
-        <div style={{
-          background: "#FFFFFF", borderRadius: "16px",
-          boxShadow: "0 4px 24px rgba(180,150,80,0.08)",
-          overflow: "hidden", marginBottom: "16px",
-        }}>
-          {plans.map((plan, i) => (
-            <div key={i} style={{
-              display: "grid", gridTemplateColumns: "180px 1fr",
-              borderBottom: i < plans.length - 1 ? "1px solid #F0EBE0" : "none",
-            }}>
-              <div style={{
-                padding: "20px 24px", background: "#FFF8E7",
-                color: "#4A4A6A", fontWeight: 600, fontSize: "14px",
-              }}>{plan.name}</div>
-              <div style={{
-                padding: "20px 24px", color: "#1A1A2E", fontSize: "15px", fontWeight: 600,
-              }}>{plan.price}</div>
-            </div>
-          ))}
-        </div>
+      <div className="dlist" data-list style={{ marginBottom: 0 }}>
+        {plans.map((plan, i) => (
+          <div className="r" key={i}>
+            <div className="k">{plan.name}</div>
+            <div className="val strong">{plan.price}</div>
+          </div>
+        ))}
+      </div>
 
-        <p style={{
-          color: "#4A4A6A", fontSize: "13px", lineHeight: 1.9,
-          marginBottom: "48px",
-        }}>
-          表示価格はすべて消費税を含む総額です。料金は毎月自動的に課金されます。
-        </p>
+      <p className="small" data-r>
+        表示価格はすべて消費税を含む総額です。料金は毎月自動的に課金されます。
+      </p>
 
-        {/* ── 注意事項 ── */}
-        <div style={{
-          background: "linear-gradient(135deg, #E8F4FD, #FFF8E7)",
-          borderRadius: "16px", padding: "32px",
-          borderLeft: "4px solid #3B9EE8",
-        }}>
-          <h2 style={{
-            fontSize: "1.1rem", fontWeight: 700, marginBottom: "16px",
-            color: "#1A1A2E", marginTop: 0,
-          }}>ご契約にあたっての確認事項</h2>
-          <ul style={{
-            color: "#4A4A6A", lineHeight: 1.9, fontSize: "14px",
-            margin: 0, paddingLeft: "20px",
-          }}>
-            <li>本サービスは月額課金制で、解約手続きがない限り自動的に更新されます。</li>
-            <li>解約は次回更新日の前日までに、メールでのご連絡が必要です。</li>
-            <li>契約期間途中で解約された場合の日割り返金はございません。</li>
-            <li>
-              その他の条件は
-              <a href="/terms" style={{ color: "#3B9EE8", fontWeight: 600 }}>利用規約</a>
-              および
-              <a href="/privacy" style={{ color: "#3B9EE8", fontWeight: 600 }}>プライバシーポリシー</a>
-              をご確認ください。
-            </li>
-          </ul>
-        </div>
+      {/* ── 注意事項 ── */}
+      <div className="boxed" data-r>
+        <h2>ご契約にあたっての確認事項</h2>
+        <ul>
+          <li>本サービスは月額課金制で、解約手続きがない限り自動的に更新されます。</li>
+          <li>解約は次回更新日の前日までに、メールでのご連絡が必要です。</li>
+          <li>契約期間途中で解約された場合の日割り返金はございません。</li>
+          <li>
+            その他の条件は
+            <Link href="/terms">利用規約</Link>
+            および
+            <Link href="/privacy">プライバシーポリシー</Link>
+            をご確認ください。
+          </li>
+        </ul>
+      </div>
 
-        <div style={{ textAlign: "center", marginTop: "48px" }}>
-          <a href="/" style={{
-            color: "#3B9EE8", fontSize: "14px", fontWeight: 600,
-            textDecoration: "none", borderBottom: "1px solid #3B9EE8", paddingBottom: "2px",
-          }}>← トップページに戻る</a>
-        </div>
+      <div className="back">
+        <Link className="tlink" href="/">← トップページに戻る</Link>
       </div>
     </main>
   );

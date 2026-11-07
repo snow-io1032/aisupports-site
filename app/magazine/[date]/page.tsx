@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { getMagazineIssue, magazineIssues } from "../../data/magazineIssues";
 import MagazineEdition from "../MagazineEdition";
 import Magazine20261107 from "../Magazine20261107";
-import styles from "../magazineIndex.module.css";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -41,14 +40,18 @@ export default async function MagazineIssuePage({ params }: Props) {
   if (!issue) notFound();
   return (
     <>
-      <nav className={styles.issueNavigation} aria-label="マガジンの移動">
-        <Link href="/magazine">← AI実践マガジン一覧</Link>
-        <span>{issue.date.replaceAll("-", "/")} 号</span>
-      </nav>
+      <div className="issue-bar">
+        <nav className="issue-nav" aria-label="マガジンの移動">
+          <Link href="/magazine">← AI実践マガジン一覧</Link>
+          <span>{issue.date.replaceAll("-", "/")} 号</span>
+        </nav>
+      </div>
       {date === "2026-11-07" ? <Magazine20261107 /> : <MagazineEdition />}
-      <nav className={styles.issueNavigation} aria-label="バックナンバーへの移動">
-        <Link href="/magazine">最新号・バックナンバーを見る →</Link>
-      </nav>
+      <div className="issue-end">
+        <nav className="issue-nav" aria-label="バックナンバーへの移動">
+          <Link href="/magazine">最新号・バックナンバーを見る →</Link>
+        </nav>
+      </div>
     </>
   );
 }

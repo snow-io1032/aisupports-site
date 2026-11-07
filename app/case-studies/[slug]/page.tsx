@@ -14,7 +14,7 @@ export function generateStaticParams() {
 type Props = { params: Promise<{ slug: string }> };
 
 // 「約10時間/月」のような短い値は途中で折り返さない（長い文章は通常どおり折り返す）
-const nowrap = (v: string) => (v.length <= 12 ? "cs-nowrap" : "");
+const nowrap = (v: string) => (v.length <= 12 ? "nowrap" : "");
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
@@ -69,7 +69,7 @@ export default async function CaseStudyPage({ params }: Props) {
   };
 
   return (
-    <main className="cs-page">
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -79,83 +79,109 @@ export default async function CaseStudyPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(crumbs)) }}
       />
 
-      <article className="cs-container">
-        <Breadcrumb items={crumbs} />
+      <article>
+        <div className="wrap">
+          <header className="pg-head">
+            <div data-head><Breadcrumb items={crumbs} /></div>
+            <p className="kicker" data-head>CASE STUDY</p>
+            <h1 data-head>{cs.title}</h1>
+            <p className="p-lead" data-head>{cs.summary}</p>
+            <p className="meta-date" data-head>
+              公開日：<time dateTime={cs.publishedAt}>{cs.publishedAt.replaceAll("-", "/")}</time>
+            </p>
+          </header>
 
-        <header className="cs-header">
-          <span className="cs-label">CASE STUDY</span>
-          <h1 className="cs-title">{cs.title}</h1>
-          <p className="cs-summary">{cs.summary}</p>
-          <p className="cs-date">
-            公開日：<time dateTime={cs.publishedAt}>{cs.publishedAt.replaceAll("-", "/")}</time>
-          </p>
-        </header>
+          <div className="hl" aria-label="導入の成果">
+            {cs.results.map((r) => (
+              <div className="hl-card" data-r key={r.label} aria-hidden="true">
+                <span className="lb">{r.label}</span>
+                <div className="ba">
+                  {r.before !== "—" && <><span className="b">{r.before}</span><span className="ar">→</span></>}
+                  <span className="a">{r.after}</span>
+                </div>
+              </div>
+            ))}
+          </div>
 
-        <section className="cs-section" aria-labelledby="cs-overview">
-          <h2 id="cs-overview">概要</h2>
-          <table className="cs-table cs-table-overview">
-            <tbody>
-              <tr><th scope="row">業種</th><td>{cs.industry}</td></tr>
-              <tr><th scope="row">対象業務</th><td>{cs.target}</td></tr>
-            </tbody>
-          </table>
-        </section>
+          <div className="art">
+            <aside className="side" data-r aria-labelledby="cs-overview">
+              <h2 id="cs-overview" className="sr-only">概要</h2>
+              <dl>
+                <div><dt>業種</dt><dd>{cs.industry}</dd></div>
+                <div><dt>対象業務</dt><dd>{cs.target}</dd></div>
+              </dl>
+            </aside>
+            <div className="abody">
+              <section aria-labelledby="cs-challenge">
+                <h2 id="cs-challenge" data-r><span>01</span>課題</h2>
+                {cs.challenge.map((t) => <p data-r key={t}>{t}</p>)}
+              </section>
+              <section aria-labelledby="cs-solution">
+                <h2 id="cs-solution" data-r><span>02</span>対応</h2>
+                <ol className="steps" data-list>
+                  {cs.solution.map((t) => <li key={t}>{t}</li>)}
+                </ol>
+              </section>
+              <section aria-labelledby="cs-results">
+                <h2 id="cs-results" data-r><span>03</span>結果</h2>
+                <table className="rtable" data-r>
+                  <thead>
+                    <tr><th scope="col">対象</th><th scope="col">導入前</th><th scope="col" className="af">導入後</th></tr>
+                  </thead>
+                  <tbody>
+                    {cs.results.map((r) => (
+                      <tr key={r.label}>
+                        <th scope="row">{r.label}</th>
+                        <td data-label="導入前" className={`bf ${nowrap(r.before)}`}>{r.before}</td>
+                        <td data-label="導入後" className={`af ${nowrap(r.after)}`}>{r.after}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </section>
+              <section aria-labelledby="cs-tech">
+                <h2 id="cs-tech" data-r><span>04</span>{cs.devNote ? "使用技術と開発体制" : "使用技術"}</h2>
+                <ul className="techs" data-r>
+                  {cs.techStack.map((t) => <li key={t}>{t}</li>)}
+                </ul>
+                {cs.devNote && <p data-r>{cs.devNote}</p>}
+              </section>
+              <section aria-labelledby="cs-readers">
+                <h2 id="cs-readers" data-r><span>05</span>同じような課題をお持ちの方へ</h2>
+                <p data-r>{cs.forReaders}</p>
+              </section>
 
-        <section className="cs-section" aria-labelledby="cs-challenge">
-          <h2 id="cs-challenge">課題</h2>
-          {cs.challenge.map((t) => <p key={t}>{t}</p>)}
-        </section>
+              <aside className="cta-box" data-r>
+                <p>
+                  「自社の業務でも同じことができるか」を、現在の業務内容をうかがったうえで無料でご提案します。
+                </p>
+                <Link className="btn btn-light" href="/#contact">{cs.ctaLabel}</Link>
+              </aside>
 
-        <section className="cs-section" aria-labelledby="cs-solution">
-          <h2 id="cs-solution">対応</h2>
-          <ol className="cs-steps">
-            {cs.solution.map((t) => <li key={t}>{t}</li>)}
-          </ol>
-        </section>
-
-        <section className="cs-section" aria-labelledby="cs-results">
-          <h2 id="cs-results">結果</h2>
-          <table className="cs-table cs-table-results">
-            <thead>
-              <tr><th scope="col">対象</th><th scope="col">導入前</th><th scope="col">導入後</th></tr>
-            </thead>
-            <tbody>
-              {cs.results.map((r) => (
-                <tr key={r.label}>
-                  <th scope="row">{r.label}</th>
-                  <td data-label="導入前" className={nowrap(r.before)}>{r.before}</td>
-                  <td data-label="導入後" className={`cs-after ${nowrap(r.after)}`}>{r.after}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
-
-        <section className="cs-section" aria-labelledby="cs-tech">
-          <h2 id="cs-tech">{cs.devNote ? "使用技術と開発体制" : "使用技術"}</h2>
-          <ul className="cs-tags">
-            {cs.techStack.map((t) => <li key={t}>{t}</li>)}
-          </ul>
-          {cs.devNote && <p>{cs.devNote}</p>}
-        </section>
-
-        <section className="cs-section" aria-labelledby="cs-readers">
-          <h2 id="cs-readers">同じような課題をお持ちの方へ</h2>
-          <p>{cs.forReaders}</p>
-        </section>
-
-        <aside className="cs-cta">
-          <p className="cs-cta-text">
-            「自社の業務でも同じことができるか」を、現在の業務内容をうかがったうえで無料でご提案します。
-          </p>
-          <Link className="btn btn-primary" href="/#contact">{cs.ctaLabel}</Link>
-        </aside>
-
-        <nav className="cs-more" aria-label="関連リンク">
-          <Link href="/case-studies">ほかの導入事例を見る</Link>
-          <Link href="/#services">AISupportsの提供サービスを見る</Link>
-        </nav>
+              <nav className="more" aria-label="関連リンク" data-r>
+                <Link className="tlink" href="/case-studies">ほかの導入事例を見る <span aria-hidden="true">→</span></Link>
+                <Link className="tlink" href="/#services">AISupportsの提供サービスを見る <span aria-hidden="true">→</span></Link>
+              </nav>
+            </div>
+          </div>
+        </div>
       </article>
+
+      <section className="others" aria-labelledby="others-h">
+        <div className="wrap">
+          <p className="kicker" data-r>More case studies</p>
+          <h2 className="h2" id="others-h" data-r style={{ fontSize: "clamp(24px,3vw,36px)" }}>ほかの導入事例</h2>
+          <div className="ogrid">
+            {caseStudies.filter((o) => o.slug !== cs.slug).map((o) => (
+              <Link className="ocard" data-r key={o.slug} href={`/case-studies/${o.slug}`}>
+                <span className="ind">{o.industry}</span>
+                <h3>{o.title}</h3>
+                <span className="go">{o.shortTitle}の導入事例を読む →</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

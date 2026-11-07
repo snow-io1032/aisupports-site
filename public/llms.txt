@@ -1,0 +1,17 @@
+# AISupports
+
+> 札幌市中央区を拠点に、北海道の中小企業・地域企業へAIエージェント構築と業務自動化を支援する事業者（屋号：mlma）。業務整理から実装・現場定着まで一気通貫で対応。初回ヒアリングと提案書は無料。北海道全域で現地対応、道外はオンライン対応。
+
+## 主なページ
+
+- [札幌のAI導入・AIエージェント構築支援](https://aisupports.cc/sapporo-ai): 札幌でAI導入を検討する企業向けに、進め方・期間・費用の考え方・札幌市の補助金・よくある質問をまとめたページ
+- [導入事例](https://aisupports.cc/case-studies): 実際に現場へ導入した事例と、削減した時間などの数字
+- [食品小売のHACCP記録DX](https://aisupports.cc/case-studies/haccp-food-retail): 現場の記録入力を月約10時間から約3時間へ
+- [建設業のLINE自動見積もり](https://aisupports.cc/case-studies/line-estimate-construction): 見積もり作成を不要にし、事務スタッフ1名分相当の工数を削減
+- [農業・食品のQR在庫管理](https://aisupports.cc/case-studies/qr-inventory-agri-food): アナログ台帳からQRコードによるデジタル管理へ完全移行
+- [AI実践マガジン](https://aisupports.cc/magazine): AIニュースを仕事の判断に変える記事。出典と試行条件つき
+- [会社概要](https://aisupports.cc/company): 所在地・代表者などの事業者情報
+
+## 問い合わせ
+
+- [お問い合わせフォーム](https://aisupports.cc/#contact)

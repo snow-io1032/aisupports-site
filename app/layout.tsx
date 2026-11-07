@@ -9,11 +9,11 @@ import Motion from "./components/Motion";
 // 各ページの metadata で alternates.canonical を個別に設定する。
 export const metadata: Metadata = {
   metadataBase: new URL("https://aisupports.cc"),
-  title: "AISupports | AI・DXで現場業務を動く仕組みに変える",
+  title: "企業向けAIエージェント構築・業務自動化（札幌・北海道）｜AISupports",
   description:
-    "中小企業・地域企業向けに、業務整理、AI活用、ノーコード自動化、現場定着まで一気通貫で支援します。北海道全域対応。金融・建設・医療・製造など業種を問わず実績多数。",
+    "札幌市中央区を拠点に、北海道の中小企業・地域企業へAIエージェント構築と業務自動化を支援。業務整理から実装・現場定着まで一気通貫。初回ヒアリングと提案書は無料、北海道全域で現地対応します。",
   keywords: [
-    "AI導入", "業務自動化", "DX支援", "AIエージェント", "北海道",
+    "札幌 AI導入", "札幌 AI導入支援", "AIエージェント構築", "AI導入", "業務自動化", "DX支援", "AIエージェント", "北海道",
     "中小企業DX", "ノーコード", "Dify", "LINE API", "業務効率化",
   ],
   authors: [{ name: "AISupports" }],
@@ -21,17 +21,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://aisupports.cc",
-    title: "AISupports | AI・DXで現場業務を動く仕組みに変える",
+    title: "企業向けAIエージェント構築・業務自動化（札幌・北海道）｜AISupports",
     description:
-      "中小企業・地域企業向けに、業務整理、AI活用、ノーコード自動化、現場定着まで一気通貫で支援します。北海道全域対応。",
+      "札幌市中央区を拠点に、北海道の中小企業・地域企業へAIエージェント構築と業務自動化を支援。業務整理から実装・現場定着まで一気通貫。初回ヒアリングと提案書は無料、北海道全域で現地対応します。",
     siteName: "AISupports",
     locale: "ja_JP",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AISupports | AI・DXで現場業務を動く仕組みに変える",
+    title: "企業向けAIエージェント構築・業務自動化（札幌・北海道）｜AISupports",
     description:
-      "中小企業・地域企業向けに、業務整理、AI活用、ノーコード自動化、現場定着まで一気通貫で支援します。北海道全域対応。",
+      "札幌市中央区を拠点に、北海道の中小企業・地域企業へAIエージェント構築と業務自動化を支援。業務整理から実装・現場定着まで一気通貫。初回ヒアリングと提案書は無料、北海道全域で現地対応します。",
   },
   icons: {
     icon: "/favicon.svg",
@@ -43,16 +43,31 @@ export const viewport: Viewport = {
   themeColor: "#FFFDF8",
 };
 
-// Organization は事業者情報なので全ページ共通で出力する。
+// 事業者情報（ProfessionalService）は全ページ共通で出力する。住所は会社概要ページと同じ。
 // FAQPage はトップページ（app/page.tsx）だけで出力する。
 const jsonLdOrg = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "ProfessionalService",
+  "@id": "https://aisupports.cc/#organization",
   "name": "AISupports",
+  "alternateName": "mlma",
   "url": "https://aisupports.cc",
-  "description": "中小企業・地域企業向けAI・DX支援。業務自動化からコンサルティングまで一気通貫。北海道全域対応。",
-  "areaServed": "北海道",
-  "serviceType": ["AI導入支援", "業務自動化", "DXコンサルティング", "AIエージェント開発"],
+  "logo": "https://aisupports.cc/favicon.svg",
+  "description": "札幌市中央区を拠点に、北海道の中小企業・地域企業へAIエージェント構築と業務自動化を支援。業務整理から実装・現場定着まで一気通貫。",
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "060-0005",
+    "addressRegion": "北海道",
+    "addressLocality": "札幌市中央区",
+    "streetAddress": "北5条西11丁目15-4",
+    "addressCountry": "JP",
+  },
+  "areaServed": [
+    { "@type": "City", "name": "札幌市" },
+    { "@type": "AdministrativeArea", "name": "北海道" },
+  ],
+  "serviceType": ["AIエージェント構築", "AI導入支援", "業務自動化", "DXコンサルティング"],
+  "knowsAbout": ["AIエージェント", "生成AI", "業務自動化", "Dify", "LINE API", "Google Apps Script"],
 };
 
 const motionBoot = `(function(){try{if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;var r=document.documentElement;r.classList.add('motion');setTimeout(function(){if(!window.__motionOn)r.classList.remove('motion')},3500)}catch(e){}})();`;

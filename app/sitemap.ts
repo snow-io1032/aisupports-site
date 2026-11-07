@@ -14,6 +14,7 @@ type Freq = MetadataRoute.Sitemap[number]["changeFrequency"];
 // 導入事例は app/data/caseStudies.ts に追加すれば自動で載る。
 const pages: { path: string; priority: number; changeFrequency: Freq }[] = [
   { path: "/",             priority: 1.0, changeFrequency: "weekly" },
+  { path: "/sapporo-ai",   priority: 0.9, changeFrequency: "monthly" },
   { path: "/case-studies", priority: 0.9, changeFrequency: "weekly" },
   { path: "/magazine",     priority: 0.8, changeFrequency: "weekly" },
   { path: "/meo",          priority: 0.8, changeFrequency: "monthly" },

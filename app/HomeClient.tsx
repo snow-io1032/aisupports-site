@@ -430,6 +430,7 @@ export default function HomePage() {
             {homeFaqs.map((f) => (
               <details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>
             ))}
+            <p style={{ marginTop: 24 }}><Link className="tlink" href="/sapporo-ai">札幌でのAI導入の費用・期間・補助金をまとめて見る <span aria-hidden="true">→</span></Link></p>
           </div>
         </div>
       </section>

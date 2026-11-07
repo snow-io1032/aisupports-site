@@ -32,6 +32,7 @@ export default function SiteFooter() {
             </nav>
             <nav aria-labelledby="ft-company">
               <h2 id="ft-company">AISupports</h2>
+              <Link href="/sapporo-ai">札幌のAI導入支援</Link>
               <Link href="/case-studies">導入事例</Link>
               <Link href="/#process">進め方</Link>
               <Link href="/magazine">AI実践マガジン</Link>

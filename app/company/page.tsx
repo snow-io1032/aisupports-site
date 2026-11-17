@@ -14,7 +14,7 @@ const rows = [
   { label: "代表者",         value: "代表 林 毅（Hayashi Tsuyoshi）" },
   { label: "設立",           value: "2024年" },
   { label: "所在地",         value: "〒060-0005 北海道札幌市中央区北5条西11丁目15-4" },
-  { label: "事業内容",       value: "AI・DX支援、業務自動化コンサルティング、AIエージェント実装" },
+  { label: "事業内容",       value: "AIエージェント構築・業務自動化、AI検索・集客サイト構築" },
   { label: "サービスエリア", value: "北海道全域（オンライン対応可）" },
   { label: "お問い合わせ",   value: "サイト内お問い合わせフォームよりご連絡ください" },
   { label: "Webサイト",      value: "https://aisupports.cc" },

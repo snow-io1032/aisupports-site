@@ -26,7 +26,7 @@ export default function SiteFooter() {
             <nav aria-labelledby="ft-services">
               <h2 id="ft-services">サービス</h2>
               <Link href="/#ai-agent">AIエージェント</Link>
-              <Link href="/#consulting">コンサルティング</Link>
+              <Link href="/#services">AI検索・集客サイト構築</Link>
               <a href="https://aisupports.cc/meo">MEO</a>
               <a href="https://www.hojyokins.jp/" target="_blank" rel="noopener noreferrer">補助金申請AIサポート</a>
             </nav>

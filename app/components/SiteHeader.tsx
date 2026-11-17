@@ -83,7 +83,7 @@ export default function SiteHeader() {
             </div>
             <a href="https://aisupports.cc/meo">MEO</a>
             <Link href="/#ai-agent">AIエージェント</Link>
-            <Link href="/#consulting">コンサルティング</Link>
+            <Link href="/#services">AI検索・集客</Link>
             <Link href="/#process">進め方</Link>
             <Link href="/magazine">AI実践マガジン</Link>
             <Link href="/#contact">お問い合わせ</Link>
@@ -105,7 +105,7 @@ export default function SiteHeader() {
         <a className="sub" href="https://www.hojyokins.jp/" target="_blank" rel="noopener noreferrer" onClick={close}>補助金申請AIサポート ↗</a>
         <a href="https://aisupports.cc/meo" onClick={close}>MEO</a>
         <Link href="/#ai-agent" onClick={close}>AIエージェント</Link>
-        <Link href="/#consulting" onClick={close}>コンサルティング</Link>
+        <Link href="/#services" onClick={close}>AI検索・集客</Link>
         <Link href="/#process" onClick={close}>進め方</Link>
         <Link href="/magazine" onClick={close}>AI実践マガジン</Link>
         <Link href="/#contact" onClick={close}>お問い合わせ</Link>

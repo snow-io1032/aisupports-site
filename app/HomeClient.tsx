@@ -157,14 +157,26 @@ const results = [
 ];
 
 const services = [
-  { en: "AI Agents", ja: "AIエージェント構築",
-    desc: "問い合わせ対応・見積もり作成・報告書生成など、業務文脈を理解して動くAIエージェントを構築。LINE・Slack・Webアプリへ組み込みます。" },
-  { en: "Workflow Automation", ja: "業務自動化",
-    desc: "業務フローを可視化し、繰り返し作業をAI・ノーコードで自動化。SaaSツール間の連携から社内フロー再設計まで、現場に定着する仕組みを作ります。" },
-  { en: "System Integration", ja: "システム連携",
-    desc: "LINE、Gmail、CRM、ERP、Slackなど既存ツールをAPIでつなぎ、データの流れを自動化。ツールを変えず、仕組みを変えて業務負担を削減します。" },
-  { en: "Data & Analytics", ja: "データ分析",
-    desc: "GA4・スプレッドシート・各種DBのデータをLooker StudioやAIで分析。経営判断を支えるダッシュボードと定期レポートの自動生成を実現します。" },
+  { en: "AI Agents & Automation", ja: "AIエージェント・業務自動化",
+    desc: "問い合わせ対応から見積もり、定型業務まで。御社の業務フロー・ルール・判断基準をAIに覚えさせ、人がやらなくていい仕事を自動で回す仕組みを構築します。いまお使いのLINE・Gmail・Excel・CRMはそのまま変えずに、APIでつないで動かします。",
+    points: [
+      "問い合わせ対応・自動見積もり生成（LINE・Webフォーム）",
+      "欠品検知・自動発注・担当者への自動通知",
+      "シフト自動生成、定期レポートの自動集計・配信",
+      "GA4・売上データの可視化とAI分析レポート",
+      "既存ツール間のシステム連携（LINE / Gmail / CRM / ERP / Slack）",
+    ],
+    note: "向いている企業：見積もりや問い合わせ対応に毎日まとまった時間を取られている／Excelや紙の定型作業を減らしたい／今のツールのまま改善したい。シンプルな自動化なら1〜2週間が目安です。" },
+  { en: "AI Search & EC", ja: "AI検索・集客サイト構築",
+    desc: "AIに聞いて買う時代に、見つけてもらえる店になる。商品や店を探すとき、生成AI（ChatGPTなど）に聞く人が増えています。店舗のSNS発信（X・Instagram）をもとに、商品の特徴・品質・店の取り組みを日英両言語のページに再構成し、AI検索に見つけてもらうための土台と、実際に買えるショッピングサイトを構築します。",
+    points: [
+      "取り込み：お店のX・Instagramの過去投稿から、商品の特徴・品質・こだわりを取り込みます（店舗さまの許諾のうえで使用します）",
+      "参照ページ作成：AIが読み取れる文章構造で、日英両言語のページを作成します",
+      "ショッピングサイト構築：ページからそのまま購入できるECサイトへつなぎます",
+      "送客の計測：ページからショッピングサイトへのアクセスはすべて計測し、流入元と件数を記録します",
+      "月次レポート：AI検索からの流入数・送客数・売上への貢献を、毎月数字で報告します",
+    ],
+    note: "料金は、初期構築費＋月額保守費に、ショッピングサイトへの送客数に応じた成果課金を組み合わせた形が基本です。「計測できないものには課金しない」が原則です。※生成AIの回答に引用されるかは検索側の判断によるため、引用そのものを保証するサービスではありません。引用されやすい情報の土台を整えるサービスです。" },
 ];
 
 const agentFeatures = [
@@ -173,16 +185,6 @@ const agentFeatures = [
   { title: "自動シフト管理", text: "スタッフの希望・スキル・法令制約を学習したAIが最適シフトを自動生成。管理工数を大幅削減。" },
   { title: "医療現場の売上予測・価格提案", text: "診療データ・来院履歴から売上を予測し、現場に適した価格サジェスチョンをリアルタイムで提供。" },
   { title: "定期レポート自動通知", text: "KPIダッシュボードを自動集計し、経営陣・現場スタッフへのレポートをSlack・メールで自動配信。" },
-  { title: "ドキュメント自動生成", soon: true, text: "議事録・業務マニュアル・提案書など、各種ドキュメントのAI自動作成機能を順次リリース予定。" },
-];
-
-const consultingItems = [
-  { num: "01", title: "AI横展開・デジタル戦略", desc: "自社で実証したAIサービスを同業他社へ横展開するビジネスモデルを設計。デジタル戦略の全体像をグランドデザインとして策定します。" },
-  { num: "02", title: "海外展開支援", desc: "自社のサービス・コンテンツ・商品を海外市場へ展開するための戦略立案とデジタルマーケティング設計をご支援します。" },
-  { num: "03", title: "ワークライフバランス設計", desc: "「金曜15時終業」など、AI活用で削減した業務時間を社員の生活の質向上に還元。社内定着率・採用競争力の向上を設計します。" },
-  { num: "04", title: "海外人材リクルーティング", desc: "正社員採用を海外にも広げるため、SNS発信・多言語求人・ビザ対応まで含めたグローバル採用戦略を構築します。" },
-  { num: "05", title: "グランドデザイン設計", desc: "経営者と並走し、3〜5年の事業グランドデザインを策定。AIを起点とした次のステージへの道筋を具体化します。" },
-  { num: "06", title: "DX後の成長戦略", desc: "業務削減で生まれた「余白」を新規事業・新サービスの創出エネルギーへ転換。持続的成長の設計をサポートします。" },
 ];
 
 const tools = [
@@ -313,30 +315,12 @@ export default function HomePage() {
             {agentFeatures.map((f, i) => (
               <div className="cap" data-r key={f.title}>
                 <span className="n">{String(i + 1).padStart(2, "0")}</span>
-                <h3>{f.title}{f.soon && <span className="soon">近日公開</span>}</h3>
+                <h3>{f.title}</h3>
                 <p>{f.text}</p>
               </div>
             ))}
           </div>
-          <p className="ag-note" data-r>
-            <strong>今後対応予定</strong>：議事録・業務マニュアル・提案書など、各種ドキュメントのAI自動生成機能を順次リリース予定です。現在はヒアリングベースでご提案を進めています。
-          </p>
           <div data-r style={{ marginTop: 36 }}><a className="tlink" href="#contact">AIエージェント導入を相談する <span aria-hidden="true">→</span></a></div>
-        </div>
-      </section>
-
-      {/* ── Consulting ── */}
-      <section className="sec cons" id="consulting" aria-labelledby="cs-h">
-        <div className="wrap">
-          <p className="kicker" data-r>AI Strategy Consulting</p>
-          <h2 className="h2" id="cs-h" data-lines><span className="ln">AIで削減したその先を、</span><span className="ln">グランドデザインする。</span></h2>
-          <p className="p-lead" data-r>業務効率化はゴールではなく、スタートです。生まれた「余白」と「データ」を活かし、経営者と共に次のステージへの道筋を描きます。</p>
-          <ol className="conslist">
-            {consultingItems.map((c) => (
-              <li data-r key={c.num}><span>{c.num}</span><div><h3>{c.title}</h3><p>{c.desc}</p></div></li>
-            ))}
-          </ol>
-          <div data-r><a className="tlink" href="#contact">コンサルティングを相談する <span aria-hidden="true">→</span></a></div>
         </div>
       </section>
 
@@ -390,14 +374,20 @@ export default function HomePage() {
       <section className="sec" id="services" aria-labelledby="s-h" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <p className="kicker" data-r>Services</p>
-          <h2 className="h2" id="s-h" data-lines><span className="ln">エージェントを中心に、</span><span className="ln">業務をつなぐ。</span></h2>
-          <p className="p-lead" data-r>業務整理から実装・AI戦略まで、必要な支援をワンストップで提供します。PoC止まりではなく、現場で「使われる仕組み」を作ります。</p>
+          <h2 className="h2" id="s-h" data-lines><span className="ln">2つのことに、</span><span className="ln">絞ってやります。</span></h2>
+          <p className="p-lead" data-r>業務を自動で回す仕組みと、AI検索から売れる仕組み。AISupportsの提供サービスは、この2つです。</p>
           <div className="svc-list">
             {services.map((s, i) => (
               <div className="svc" data-r key={s.en}>
                 <span className="n">{String(i + 1).padStart(2, "0")}</span>
                 <h3>{s.en}<small>{s.ja}</small></h3>
-                <p>{s.desc}</p>
+                <div>
+                  <p>{s.desc}</p>
+                  <ul className="svc-points">
+                    {s.points.map((pt) => <li key={pt}>{pt}</li>)}
+                  </ul>
+                  <p className="svc-note">{s.note}</p>
+                </div>
               </div>
             ))}
           </div>

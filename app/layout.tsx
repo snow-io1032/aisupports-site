@@ -50,9 +50,9 @@ const jsonLdOrg = {
   "@type": "Organization",
   "name": "AISupports",
   "url": "https://aisupports.cc",
-  "description": "中小企業・地域企業向けAI・DX支援。業務自動化からコンサルティングまで一気通貫。北海道全域対応。",
+  "description": "中小企業・地域企業向けAI・DX支援。AIエージェント・業務自動化と、AI検索・集客サイト構築の2つに絞って提供。北海道全域対応。",
   "areaServed": "北海道",
-  "serviceType": ["AI導入支援", "業務自動化", "DXコンサルティング", "AIエージェント開発"],
+  "serviceType": ["AIエージェント開発", "業務自動化", "AI検索・集客サイト構築", "ECサイト構築"],
 };
 
 const motionBoot = `(function(){try{if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;var r=document.documentElement;r.classList.add('motion');setTimeout(function(){if(!window.__motionOn)r.classList.remove('motion')},3500)}catch(e){}})();`;

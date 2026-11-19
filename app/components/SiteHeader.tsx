@@ -68,22 +68,32 @@ export default function SiteHeader() {
           </Link>
 
           <nav className="gnav" aria-label="メインメニュー">
-            <Link href="/#results">実績</Link>
             <div className="dd" ref={ddRef}>
               <button className="dd-btn" type="button" aria-expanded={ddOpen} aria-controls="dd-services"
                 onClick={() => setDdOpen((v) => !v)}>
                 サービス<span className="car" aria-hidden="true" />
               </button>
               <div className="dd-menu" id="dd-services" hidden={!ddOpen}>
+                <span className="grp">2本柱</span>
+                <Link href="/#ai-agent" onClick={() => setDdOpen(false)}>
+                  AIエージェント・業務自動化<small>問い合わせ・見積もりの自動化</small>
+                </Link>
+                <Link href="/#services" onClick={() => setDdOpen(false)}>
+                  AI検索・集客サイト構築<small>生成AI時代に見つけてもらえる店へ</small>
+                </Link>
+                <span className="grp">専門サービス</span>
+                <a href="https://aisupports.cc/meo">
+                  MEOローカル集客<small>地図検索を、売上に変える</small>
+                </a>
+                <Link href="/real-estate" onClick={() => setDdOpen(false)}>
+                  不動産向け提案<small>SUUMO LP自動生成・ツアー化</small>
+                </Link>
                 <a href="https://www.hojyokins.jp/" target="_blank" rel="noopener noreferrer">
                   補助金申請AIサポート<small>hojyokins.jp ↗</small>
                 </a>
-                <Link href="/#services" onClick={() => setDdOpen(false)}>その他のサービス</Link>
               </div>
             </div>
-            <a href="https://aisupports.cc/meo">MEO</a>
-            <Link href="/#ai-agent">AIエージェント</Link>
-            <Link href="/#services">AI検索・集客</Link>
+            <Link href="/#results">実績</Link>
             <Link href="/#process">進め方</Link>
             <Link href="/magazine">AI実践マガジン</Link>
             <Link href="/#contact">お問い合わせ</Link>
@@ -100,12 +110,15 @@ export default function SiteHeader() {
       </header>
 
       <div id="site-mobile-menu" className="menu-panel" hidden={!menuOpen}>
-        <Link href="/#results" onClick={close}>実績</Link>
         <Link href="/#services" onClick={close}>サービス</Link>
+        <span className="grp">2本柱</span>
+        <Link className="sub" href="/#ai-agent" onClick={close}>AIエージェント・業務自動化</Link>
+        <Link className="sub" href="/#services" onClick={close}>AI検索・集客サイト構築</Link>
+        <span className="grp">専門サービス</span>
+        <a className="sub" href="https://aisupports.cc/meo" onClick={close}>MEOローカル集客</a>
+        <Link className="sub" href="/real-estate" onClick={close}>不動産向け提案</Link>
         <a className="sub" href="https://www.hojyokins.jp/" target="_blank" rel="noopener noreferrer" onClick={close}>補助金申請AIサポート ↗</a>
-        <a href="https://aisupports.cc/meo" onClick={close}>MEO</a>
-        <Link href="/#ai-agent" onClick={close}>AIエージェント</Link>
-        <Link href="/#services" onClick={close}>AI検索・集客</Link>
+        <Link href="/#results" onClick={close}>実績</Link>
         <Link href="/#process" onClick={close}>進め方</Link>
         <Link href="/magazine" onClick={close}>AI実践マガジン</Link>
         <Link href="/#contact" onClick={close}>お問い合わせ</Link>

@@ -58,6 +58,8 @@ html.motion [data-r], html.motion [data-head], html.motion [data-lines] .ln, htm
 .dd-menu a{display:block;padding:10px 12px;border-radius:10px;color:var(--ink);text-decoration:none;white-space:nowrap}
 .dd-menu a:hover{background:var(--bg2)}
 .dd-menu small{display:block;font-size:12px;color:var(--mute)}
+.dd-menu .grp{display:block;font-family:var(--sans);font-size:11px;font-weight:500;color:var(--mute);letter-spacing:.06em;padding:10px 12px 4px}
+.dd-menu .grp:not(:first-child){margin-top:6px;border-top:1px solid var(--line);padding-top:14px}
 .hdr .btn{min-height:40px;padding:8px 18px;font-size:14px}
 .menu-btn{display:none;margin-left:auto;width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:var(--card);cursor:pointer;position:relative}
 .menu-btn i{position:absolute;left:13px;right:13px;height:1.5px;background:var(--ink);transition:transform .3s ease, top .3s ease}
@@ -68,6 +70,7 @@ html.motion [data-r], html.motion [data-head], html.motion [data-lines] .ln, htm
 .menu-panel[hidden]{display:none}
 .menu-panel a{font-size:19px;font-weight:500;text-decoration:none;padding:13px 0;border-bottom:1px solid var(--line);color:var(--ink)}
 .menu-panel a.sub{font-size:16px;padding-left:16px;color:var(--sub)}
+.menu-panel .grp{display:block;font-family:var(--sans);font-size:12px;font-weight:500;color:var(--mute);letter-spacing:.06em;padding:18px 0 2px}
 .menu-panel .btn{margin-top:24px;border:0;font-size:16px;color:#fff}
 body.menu-open{overflow:hidden}
 @media (max-width:1180px){.gnav,.hdr .btn{display:none}.menu-btn{display:block}}

@@ -361,11 +361,17 @@ body.menu-open{overflow:hidden}
 .nf h1{font-weight:500;font-size:clamp(28px,4vw,40px);margin:18px 0 16px}
 .nf p{color:var(--sub);margin:0 0 36px}
 .nf .acts{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.btn-line{border:1px solid var(--line);background:var(--card);color:var(--ink)}
-.btn-line:hover{border-color:var(--ink);color:var(--ink)}
+.btn-line{border:1px solid var(--line);background:var(--card);color:var(--ink)}.btn-line:hover{border-color:var(--ink);color:var(--ink)}
 @media (max-width:640px){.dlist .r{grid-template-columns:1fr;gap:4px}}
 
 @media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important}}
 .nowrap{white-space:nowrap}
 .ag-note{margin-top:28px;padding:16px 20px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);font-size:13.5px;line-height:1.85;color:var(--sub)}
 .ag-note strong{color:var(--ink);font-weight:600}
+/* ════════════ real-estate page ════════════ */
+.re-imgs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+.re-imgs img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.re-price{font-family:var(--sans);font-weight:500;font-size:clamp(32px,4vw,44px);letter-spacing:-.02em;margin-top:14px}
+.specs{margin:14px 0 0;color:var(--sub);font-size:15px}
+.desc{margin:14px 0 0;color:#2E3138}
+@media (max-width:900px){.re-imgs{grid-template-columns:1fr}}

@@ -85,6 +85,9 @@ export default function SiteHeader() {
                 <a href="https://aisupports.cc/meo">
                   MEOローカル集客<small>地図検索を、売上に変える</small>
                 </a>
+                <Link href="/retail-profit-analytics" onClick={() => setDdOpen(false)}>
+                  売上・粗利・PL分析<small>小売店の経営ダッシュボード</small>
+                </Link>
                 <Link href="/real-estate" onClick={() => setDdOpen(false)}>
                   不動産向け提案<small>SUUMO LP自動生成・ツアー化</small>
                 </Link>
@@ -116,6 +119,7 @@ export default function SiteHeader() {
         <Link className="sub" href="/#services" onClick={close}>AI検索・集客サイト構築</Link>
         <span className="grp">専門サービス</span>
         <a className="sub" href="https://aisupports.cc/meo" onClick={close}>MEOローカル集客</a>
+        <Link className="sub" href="/retail-profit-analytics" onClick={close}>売上・粗利・PL分析</Link>
         <Link className="sub" href="/real-estate" onClick={close}>不動産向け提案</Link>
         <a className="sub" href="https://www.hojyokins.jp/" target="_blank" rel="noopener noreferrer" onClick={close}>補助金申請AIサポート ↗</a>
         <Link href="/#results" onClick={close}>実績</Link>

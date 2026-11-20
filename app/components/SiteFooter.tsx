@@ -28,6 +28,7 @@ export default function SiteFooter() {
               <Link href="/#ai-agent">AIエージェント</Link>
               <Link href="/#services">AI検索・集客サイト構築</Link>
               <a href="https://aisupports.cc/meo">MEO</a>
+              <Link href="/retail-profit-analytics">売上・粗利・PL分析</Link>
               <a href="https://www.hojyokins.jp/" target="_blank" rel="noopener noreferrer">補助金申請AIサポート</a>
             </nav>
             <nav aria-labelledby="ft-company">

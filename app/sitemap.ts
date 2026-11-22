@@ -19,6 +19,7 @@ const pages: { path: string; priority: number; changeFrequency: Freq }[] = [
   { path: "/retail-profit-analytics", priority: 0.9, changeFrequency: "monthly" },
   { path: "/real-estate",  priority: 0.8, changeFrequency: "monthly" },
   { path: "/overseas-accounts", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/en",           priority: 0.6, changeFrequency: "monthly" },
   { path: "/meo",          priority: 0.8, changeFrequency: "monthly" },
   { path: "/company",      priority: 0.5, changeFrequency: "yearly" },
   { path: "/tokushoho",    priority: 0.3, changeFrequency: "yearly" },

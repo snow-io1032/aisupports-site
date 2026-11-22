@@ -107,7 +107,7 @@ export default function RealEstatePage() {
                   <li>動画と物件紹介ページを組み合わせた集客の仕組み</li>
                 </ul>
                 <ul className="stack">
-                  <li>歴史ルームツアー（登録者65人・動画12本）</li>
+                  <li>歴史ルームツアー（登録者77人・動画12本）</li>
                 </ul>
               </div>
             </div>

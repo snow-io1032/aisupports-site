@@ -57,6 +57,7 @@ export default function SiteHeader() {
   }, []);
 
   const close = () => setMenuOpen(false);
+  const isEn = pathname?.startsWith("/en") ?? false;
 
   return (
     <>
@@ -101,6 +102,15 @@ export default function SiteHeader() {
             <Link href="/magazine">AI実践マガジン</Link>
             <Link href="/#contact">お問い合わせ</Link>
           </nav>
+
+          <div className="lang-sw" role="group" aria-label="Language / 言語">
+            <Link href="/" className={isEn ? undefined : "on"} aria-current={!isEn ? "true" : undefined}>
+              JA
+            </Link>
+            <Link href="/en" className={isEn ? "on" : undefined} aria-current={isEn ? "true" : undefined}>
+              EN
+            </Link>
+          </div>
 
           <Link className="btn btn-ink" href="/#contact">無料相談</Link>
           <button ref={menuBtnRef} className="menu-btn" type="button"

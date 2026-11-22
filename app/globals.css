@@ -48,6 +48,11 @@ html.motion [data-r], html.motion [data-head], html.motion [data-lines] .ln, htm
 .gnav{display:flex;align-items:center;gap:clamp(14px,1.6vw,24px);margin-left:auto;font-size:14px;white-space:nowrap}
 .gnav > a{text-decoration:none;color:var(--sub);transition:color .25s ease}
 .gnav > a:hover{color:var(--ink)}
+.lang-sw{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:999px;padding:2px;background:var(--card);flex-shrink:0}
+.lang-sw a{text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.05em;color:var(--sub);padding:5px 11px;border-radius:999px;line-height:1;transition:color .25s ease,background .25s ease}
+.lang-sw a:hover{color:var(--ink)}
+.lang-sw a.on{background:var(--ink);color:#fff}
+.lang-sw a.on:hover{color:#fff}
 .dd{position:relative}
 .dd-btn{background:none;border:0;font:inherit;color:var(--sub);cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:8px 0;min-height:40px;transition:color .25s ease}
 .dd-btn:hover,.dd-btn[aria-expanded="true"]{color:var(--ink)}

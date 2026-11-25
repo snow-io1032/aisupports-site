@@ -145,7 +145,7 @@ export default function EnglishPage() {
                   <li>Account setup and connections to the chat and email tools you already use</li>
                   <li>Instruction templates, so work can be delegated consistently</li>
                   <li>Your first three automations, set up and running: scheduled competitor and market research reports, drafted articles and social posts, summarized meeting notes, monitoring of industry news and subsidy programs</li>
-                  <li>Priced by quotation, based on roles and scope — start with one role and expand once the results are visible</li>
+                  <li>Three-part pricing: a one-time setup fee from ¥55,000 (excl. tax), monthly operations at ¥33,000 (excl. tax, six-month minimum, including scheduled reports, draft production, monitoring and a monthly report of hours saved), plus individually agreed success fees for referrals and closed deals. Third-party tool fees are billed at cost under your own accounts — start with one role and expand once the results are visible</li>
                 </ul>
               </div>
             </div>

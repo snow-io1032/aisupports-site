@@ -8,6 +8,13 @@ export type MagazineIssue = {
 // Add only reviewed, publication-approved editions. New entries require a rebuild.
 export const magazineIssues: MagazineIssue[] = [
   {
+    date: "2026-11-25",
+    title: "海外の中小企業は、AIをどこから使ったか。",
+    description:
+      "シンガポールとオーストラリアの中小企業5社のAI活用事例。問い合わせ対応、コンテンツ制作、請求処理、見積もり、データ分類。小さく始めて、時間と件数で確かめた実例を出典つきで紹介します。",
+    verifiedAt: "2026-11-25",
+  },
+  {
     date: "2026-11-07",
     title: "AIに任せる前に、データと完成条件を整える。",
     description:

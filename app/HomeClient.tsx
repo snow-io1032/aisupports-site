@@ -321,6 +321,24 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <div className="svc-list" data-r style={{ marginTop: 56 }}>
+            <div className="svc">
+              <span className="n">New</span>
+              <h3>AI Team Setup &amp; Operations<small>AIチーム導入・運用支援</small></h3>
+              <div>
+                <p>参謀・リサーチャー・コンテンツ担当といった役割を持つAIエージェントを、クラウド上で24時間常時稼働させる導入パッケージです。実行基盤には、役割テンプレートを備えたAIエージェント基盤（MyClaw 3.0など）を活用します。どの役割に、どの業務を、どこまで任せるか。初期設定から運用まで、業務に合わせて設計し、現場で回る状態まで支援します。</p>
+                <ul className="svc-points">
+                  <li>役割の選定：業務に合わせて、任せる役割と担当範囲を設計します</li>
+                  <li>アカウント・連携の初期設定：普段お使いのチャットやメールから指示できる状態にします</li>
+                  <li>指示テンプレートの整備：頼み方の型を整え、誰が頼んでも同じ品質で回る形にします</li>
+                  <li>最初の自動化3本のセットアップ：効果の出やすい業務から、小さく確実に動かします</li>
+                  <li>運用支援：出力の確認フローの設計と、現場への定着支援を行います</li>
+                </ul>
+                <p className="svc-note">対応例：競合・市場調査の定期レポート、記事・SNS投稿文の下書き量産、議事録・報告書の要約と整形、業界ニュースや補助金情報の巡回。削減の軸（調査・下書き・定型業務の時間削減）と、売上の軸（コンテンツ量産・見込み客調査）の両面で設計します。料金は、導入する役割と自動化の範囲に応じて個別にお見積もりします。まずは1つの役割・小さな業務範囲から始め、成果を確認してから広げる進め方です。</p>
+                <p style={{ marginTop: 14 }}><a className="tlink" href="#contact">AIチーム導入を相談する <span aria-hidden="true">→</span></a></p>
+              </div>
+            </div>
+          </div>
           <div data-r style={{ marginTop: 36 }}><a className="tlink" href="#contact">AIエージェント導入を相談する <span aria-hidden="true">→</span></a></div>
         </div>
       </section>

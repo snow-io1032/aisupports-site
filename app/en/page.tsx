@@ -54,7 +54,7 @@ export default function EnglishPage() {
             What we do
           </p>
           <h2 className="h2" data-head>
-            Three services, one operator
+            Four services, one operator
           </h2>
           <div className="svc-list" data-list>
             <div className="svc">
@@ -119,6 +119,33 @@ export default function EnglishPage() {
                   <li>Course content and video subtitles (Kajabi, Teachable and others)</li>
                   <li>Native check of existing Japanese pages and copy</li>
                   <li>Start small: one page, or one email sequence, first</li>
+                </ul>
+              </div>
+            </div>
+            <div className="svc">
+              <span className="n">04</span>
+              <h3>
+                AI Team Setup &amp; Operations
+                <small>Always-on AI agents, introduced and run for you</small>
+              </h3>
+              <div>
+                <p>
+                  We introduce always-on AI agent platforms — preconfigured
+                  teammates with roles such as chief of staff, researcher and
+                  content writer, running around the clock in the cloud
+                  (platforms such as MyClaw 3.0 are one example of an
+                  execution base) — and support everything from initial setup
+                  to day-to-day operation. On the cost side, this cuts the
+                  hours spent on research, drafting and routine work; on the
+                  sales side, it keeps content production and prospect
+                  research moving.
+                </p>
+                <ul className="svc-points">
+                  <li>Role selection matched to your workflows</li>
+                  <li>Account setup and connections to the chat and email tools you already use</li>
+                  <li>Instruction templates, so work can be delegated consistently</li>
+                  <li>Your first three automations, set up and running: scheduled competitor and market research reports, drafted articles and social posts, summarized meeting notes, monitoring of industry news and subsidy programs</li>
+                  <li>Priced by quotation, based on roles and scope — start with one role and expand once the results are visible</li>
                 </ul>
               </div>
             </div>

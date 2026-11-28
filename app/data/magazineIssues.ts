@@ -8,6 +8,13 @@ export type MagazineIssue = {
 // Add only reviewed, publication-approved editions. New entries require a rebuild.
 export const magazineIssues: MagazineIssue[] = [
   {
+    date: "2026-11-28",
+    title: "札幌の中小企業が、AIエージェントで業務を回す形。",
+    description:
+      "AISupports自身の部門別AIエージェント運用（一次情報）、国内の中小企業・自治体の公開事例4件（出典つき）、自社プロダクトJISSEKIの多言語化の作業記録。AI導入を「1業務から始める」ための実例集。",
+    verifiedAt: "2026-11-28",
+  },
+  {
     date: "2026-11-25",
     title: "海外の中小企業は、AIをどこから使ったか。",
     description:

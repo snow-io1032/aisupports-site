@@ -5,6 +5,7 @@ import { getMagazineIssue, magazineIssues } from "../../data/magazineIssues";
 import MagazineEdition from "../MagazineEdition";
 import Magazine20261107 from "../Magazine20261107";
 import Magazine20261125 from "../Magazine20261125";
+import Magazine20261128 from "../Magazine20261128";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -47,7 +48,9 @@ export default async function MagazineIssuePage({ params }: Props) {
           <span>{issue.date.replaceAll("-", "/")} 号</span>
         </nav>
       </div>
-      {date === "2026-11-25" ? (
+      {date === "2026-11-28" ? (
+        <Magazine20261128 />
+      ) : date === "2026-11-25" ? (
         <Magazine20261125 />
       ) : date === "2026-11-07" ? (
         <Magazine20261107 />
